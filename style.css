@@ -1,0 +1,160 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
+    background: #111;
+}
+
+/* ----------GÉNÉRAL-------------- */
+
+:root {
+    --color-main : #151C21;
+    --shadow-color : #1E2326;
+    --white-color : #f1f1f1;
+    --accent-color : #FF9F0D;
+    --logo-color : #980848;
+}
+
+/* ----------------ALLSECTIONS----------------- */
+.sticky-section {
+    position: sticky;
+    height: 100vh;
+}
+
+/* ------------NAV HEADER--------- */
+
+/* HEADER SECTION */
+
+.header-section{
+    position: sticky;
+    top: 0;
+}
+
+
+/* NAV-BAR */
+
+.navbar-header .logo {
+    width: 166px;
+}
+.navbar-header {
+    width: 100%;
+    background: var(--color-main);
+    height: 123px;
+    display: flex;
+    align-items: center;
+    padding: 11px 50px;
+}
+
+.header-link{
+    margin-left: auto;
+}
+
+.header-link a {
+    margin-right: 91px;
+}
+
+.navbar-header .svgs {
+    width: 35px;
+}
+
+.navbar-header a{
+    color: var(--accent-color);
+    font-size: 24px;
+}
+
+/* PARALLAX */
+
+.parallax {
+    display: flex;
+    flex-direction: column;
+    justify-self:auto;
+    align-items: center;
+    position: relative;
+}
+
+.parallax .img-parallax {
+    height: 800px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: blur(3px);
+}
+
+.slogan, .search-bar {
+    position: absolute;
+}
+
+.slogan {
+    color: var(--white-color);
+    font-size: 48px;
+    font-family: "Updock", cursive;
+    font-weight: 400;
+    font-size: 96px;
+    bottom: 20px;
+}
+
+
+.search-bar {
+    width: 904px;
+    height: 63px;
+    border-radius: 39px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 30px;
+    font-size: 24px;
+    border: none;
+}
+
+
+
+/* SECTION CATEGORIE */
+
+.section-categorie {
+    background: var(--white-color);
+}
+
+.section-categorie {
+    padding: 100px;
+}
+
+.subtitle {
+    color: var(--accent-color);
+    margin: 0 50px 50px;
+    font-size: 50px;
+}
+
+.container-categorie {
+    margin: 0 auto;
+    background: #000;
+    max-width: 1321px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.card{
+    background: white;
+    width: 230px;
+    height: 237px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card p {
+    position: absolute;
+    color: #FF9F0D;
+    font-size: 32px;
+}
