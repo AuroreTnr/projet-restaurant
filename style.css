@@ -37,7 +37,7 @@ body {
 
 
 /* NAV-BAR */
-
+/* 
 .navbar-header .logo {
     width: 166px;
 }
@@ -65,7 +65,7 @@ body {
 .navbar-header a{
     color: var(--accent-color);
     font-size: 24px;
-}
+} */
 
 /* PARALLAX */
 
