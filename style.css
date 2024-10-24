@@ -13,6 +13,7 @@ body {
 }    
 
 /* ----------GÉNÉRAL-------------- */
+
 :root {
     --color-main : #151C21;
     --shadow-color : #1E2326;
@@ -30,39 +31,42 @@ main{
 }
 
 
+/* ----------NAV BAR-------------- */
+
+.navbar-nav li a{
+    color: var(--accent-color);
+}
 
 .logo {
-    width: 30px;
+    width: 50px;
 }
 
-.parallax {
-    top: 0;
-    position: sticky;
+.search, .account {
+    width: 20px;
 }
 
-.parallax img{
-    height: 50vmin;
-    object-fit: cover;
-    object-position: top;
+.btn-burger {
+    color: var(--accent-color);
 }
 
-.card-img-overlay {
-    height: 50vmin;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+form button {
+    border-color: 1px solid var(--accent-color);
 }
 
-.card-img-overlay h5{
+/* ----------BANNIERE-------------- */
+
+
+.text-banniere h5{
     font-size: 10vmin;
     font-family: updock, cursive;
 }
 
-.card-img-overlay p{
+.text-banniere p{
     font-size: 5vmin;
     font-family: updock, cursive;
 }
+
+/* ABOUT THE DISTRICT  */
 
 .subtitle h5{
     color: var(--logo-color);
@@ -72,6 +76,174 @@ main{
     color: var(--accent-color);
 }
 
-.container-stars img{
-    width: 50px;
+/* CATEGORIE */
+
+
+h2{
+    text-decoration: underline;
+    text-underline-offset: 7px;
 }
+
+
+.hover-card {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.hover-card p{
+    color: var(--white-color);
+    text-shadow: 1px 1px #333;
+}
+
+.card .hover-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ANIMATION HOVER */
+
+.hover-card:hover {
+    opacity: 0;
+}
+
+
+/* TITLE STARS */
+
+.container-stars{
+    animation: shake 1s alternate infinite;
+}
+
+.container-stars h2{
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
+
+.container-stars span{
+    top: -10px;
+    left: -50px;
+}
+
+/* ANIMATION STARS */
+
+@keyframes shake {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/* CARD */
+
+.card img{
+    width: 100px;
+    height: 100px;
+}
+
+.card a img{
+    background: var(--accent-color);
+    padding: 5px 10px;
+    width: 50px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+/* CAROUSEL */
+.carousel {
+    width: 250px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.carousel-inner {
+    border-radius: 20px;
+}
+
+/* BLOCK AVIS */
+.block-avis{
+    width: 280px;
+    height: 160px;
+    margin: 10px auto;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+.box {
+    width: 100%;
+    animation: slideavis 7s ease-in-out alternate infinite;
+}
+
+.box p {
+    color: var(--white-color);
+    line-height: 1.7;
+}
+
+/* ANIMATION BLOCK AVIS*/
+
+@keyframes slideavis {
+    0% {
+        transform: translateY(0px);
+    }
+    10% {
+        transform: translateY(0px);
+    }
+    20% {
+        transform: translateY(0px);
+    }
+    35% {
+        transform: translateY(-36%);
+    }
+    40% {
+        transform: translateY(-36%);
+    }
+    50% {
+        transform: translateY(-36%);
+    }
+    70% {
+        transform: translateY(-36%);
+    }
+    85% {
+        transform: translateY(-70%);
+    }
+    90% {
+        transform: translateY(-70%);
+    }
+    100% {
+        transform: translateY(-70%);
+    }
+}
+
+
+footer img {
+    bottom: 0;
+}
+
+
+
+
+/* ----------PARALLAX-------------- */
+
+/* .parallax {
+    position: relative;
+} */
+
+
+/* .parallax{
+    background-image: url(assets/img/parallax_1920.jpg);
+    background-attachment: fixed;
+    height: 60vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    object-position: center;
+} */
+
+
