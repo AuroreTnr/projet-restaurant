@@ -29,7 +29,6 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--color-main);
 }
 
 
@@ -40,26 +39,24 @@ main{
 }
 
 .logo {
-    width: 50px;
+    height: 50px;
 }
 
-.account , .panier{
-    width: 20px;
+.account , .recherche, .panier{
+    color: var(--accent-color);
 }
 
 .btn-burger {
     color: var(--accent-color);
 }
 
-form button {
-    border-color: 1px solid var(--accent-color);
-}
 
 /* ----------BANNIERE-------------- */
 
 .container-items img {
-    height: 250px;
+    height: 350px;
     object-fit: cover;
+    object-position: top;
 }
 
 .text-banniere h5{
@@ -74,13 +71,24 @@ form button {
 
 /* ABOUT THE DISTRICT  */
 
-.subtitle h5{
+.card-about h5{
     color: var(--logo-color);
 }
 
 .title {
     color: var(--accent-color);
 }
+
+
+
+.container-float h5 {
+    color: var(--logo-color);
+}
+
+.video {
+    height: 250px;
+}
+
 
 /* CATEGORIE */
 
@@ -90,20 +98,24 @@ h2{
     text-underline-offset: 7px;
 }
 
+.card-up {
+    background: var(--white-color);
+    opacity: 0;
+}
 
-.hover-card {
+.card-down {
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
 }
 
-.hover-card p{
+.card-down p{
     color: var(--white-color);
     text-shadow: 1px 1px #333;
 }
 
-.card .hover-card img {
+.card .card-down img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -111,8 +123,8 @@ h2{
 
 /* ANIMATION HOVER */
 
-.hover-card:hover {
-    opacity: 0;
+.card-up:hover {
+    opacity: 1;
     transition: opacity .4s ease-in;
 }
 
@@ -238,23 +250,5 @@ footer img {
 
 
 
-
-/* ----------PARALLAX-------------- */
-
-/* .parallax {
-    position: relative;
-} */
-
-
-/* .parallax{
-    background-image: url(assets/img/parallax_1920.jpg);
-    background-attachment: fixed;
-    height: 60vmin;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    object-position: center;
-} */
 
 
