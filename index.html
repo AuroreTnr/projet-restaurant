@@ -21,36 +21,41 @@
 <body class="bg-dark">
 
     <!-- NAV HEADER -->
-    <nav class="navbar navbar-expand-lg bg-body-darck">
-      <div class="container-fluid position-relative">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+
+
+    <nav class="navbar bg-dark fixed-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <i class="btn-burger bi bi-three-dots-vertical"></i>
         </button>
         <a href="#"><img src="assets/img/logo_transparent.png" class="logo" alt="logo le district"></a>
-        <a href="#"><img src="assets/svgs/user-profile-svgrepo-com.svg" class="account ms-auto m-1" alt="connexion"></a>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link text-uppercase" aria-current="page" href="#">Accueil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-uppercase" href="#">catégorie</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-uppercase" href="#">plats</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-uppercase" href="#">contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-uppercase" href="#">panier</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Entrez votre recherche" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">🔍</button>
-          </form>
+        <a href="#"><img src="assets/svgs/user-profile-svgrepo-com.svg" class="account" alt="connexion"></a>
+        
+        <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+            <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" aria-current="page" href="#">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#">catégorie</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#">plats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#">contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#">panier</a>
+              </li>
+            </ul>
+  
+          </div>
         </div>
       </div>
     </nav>
@@ -58,7 +63,7 @@
 
     <!-- BANNIERE -->
       <div class="container-items position-relative d-flex justify-content-center align-items-center">
-        <img src="assets/img/parallax_1920.jpg" class="card-img position-relative" alt="jeune femme dégustant son repas au restaurant le district">
+        <img src="assets/img/banniere_1920.jpg" class="card-img position-relative" alt="jeune femme dégustant son repas au restaurant le district">
         <div class="text-banniere position-absolute">
           <h5 class="card-title text-white">Restaurant le district</h5>
           <p class="card-text text-white">“Bien manger,  un plaisir à partager ”</p>
@@ -68,12 +73,12 @@
 
 
     <!-- ABOUT THE DISTRICT -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row bg-light">
             <div class="subtitle col-12 p-5">
                 <h5 class="fs-3">Le district</h5>
                 <h5 class="fs-6">Since 2019</h5>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum dolorum expedita quae assumenda incidunt nulla et praesentium voluptatem esse a.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda accusamus fugiat exercitationem quasi tenetur veniam autem, cupiditate natus neque aspernatur nam! Laborum ratione nesciunt, dolores porro exercitationem mollitia recusandae amet tempore in a architecto aperiam! Corporis quos sint, accusantium repellat ratione dolorem voluptas! Aspernatur aliquid labore, in doloribus excepturi dolorum.</p>
             </div>
         </div>
     </div>
@@ -83,9 +88,9 @@
     <!-- CATEGORIE -->
     <h2 class="fs-5 title p-3 my-3 text-uppercase text-center">catégorie</h2>
 
-    <div class="container container-categorie text-center">
-      <div class="row align-items-start row justify-content-center row-gap-4">
-        <div class="col-8">
+    <div class="container container-categorie text-center d-flex justify-content-center">
+      <div class="row row-categorie align-items-start row justify-content-center row-gap-4">
+        <div class="col-10 col-md-5 col-lg-4">
           <div class="card rounded">
             <div class="card-body d-flex flex-column align-items-center position-relative">
                 <img src="assets/img/burger_cat.jpg" class="card-img-top img-fluid rounded-circle object-fit-cover my-3" alt="catégorie burger">
@@ -99,7 +104,7 @@
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-10 col-md-5 col-lg-4">
           <div class="card rounded">
             <div class="card-body d-flex flex-column align-items-center position-relative">
                 <img src="assets/img/pizza_cat.jpg" class="card-img-top img-fluid rounded-circle object-fit-cover my-3" alt="catégorie pizza">
@@ -113,7 +118,7 @@
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-10 col-md-5 col-lg-4">
           <div class="card rounded">
             <div class="card-body d-flex flex-column align-items-center position-relative">
                 <img src="assets/img/pasta_cat.jpg" class="card-img-top img-fluid rounded-circle object-fit-cover my-3" alt="catégorie Pasta">
@@ -127,7 +132,7 @@
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-10 col-md-5 col-lg-4">
           <div class="card rounded">
             <div class="card-body d-flex flex-column align-items-center position-relative">
                 <img src="assets/img/asian_food_cat.jpg" class="card-img-top img-fluid rounded-circle object-fit-cover my-3" alt="catégorie Sushi">
@@ -141,7 +146,7 @@
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-10 col-md-5 col-lg-4">
           <div class="card rounded">
             <div class="card-body d-flex flex-column align-items-center position-relative">
                 <img src="assets/img/sandwich_cat.jpg" class="card-img-top img-fluid rounded-circle object-fit-cover my-3" alt="catégorie Sandwish">
@@ -155,7 +160,7 @@
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-10 col-md-5 col-lg-4">
           <div class="card rounded">
             <div class="card-body d-flex flex-column align-items-center position-relative">
                 <img src="assets/img/wrap_cat.jpg" class="card-img-top img-fluid rounded-circle object-fit-cover my-3" alt="catégorie Wrap">
@@ -169,7 +174,7 @@
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-10 col-md-5 col-lg-4">
           <div class="card rounded">
             <div class="card-body d-flex flex-column align-items-center position-relative">
                 <img src="assets/img/salade_cat.jpg" class="card-img-top img-fluid rounded-circle object-fit-cover my-3" alt="catégorie Salade">
@@ -183,7 +188,7 @@
           </div>
         </div>
 
-        <div class="col-8">
+        <div class="col-10 col-md-5 col-lg-4">
           <div class="card rounded">
             <div class="card-body d-flex flex-column align-items-center position-relative">
                 <img src="assets/img/veggie_cat.jpg" class="card-img-top img-fluid rounded-circle object-fit-cover my-3" alt="catégorie Veggie">
@@ -232,8 +237,8 @@
     </div>
 
     <!-- TITLE AVIS -->
-     <h2 class="fs-6 title p-3 text-uppercase text-center mt-5" >Votre avis compte</h2>
-
+    
+    <h2 class="fs-6 title p-3 text-uppercase text-center mt-5" >Votre avis compte</h2>
      <div class="block-avis">
         <div class="box mb-5">
             <p><span class="fs-5">Jane Cooper</span> <br> “ In a laoreet purus. Integer turpis quam, laoreet id orci lacinia nunc. Aliquam erat voIn a laoreet purus. Integer turpis quam, laoreet id orci lacinia nunc. Aliquam erat “
