@@ -9,7 +9,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-family: "Poppins", sans-serif;
-    background-image: url(assets/img/parallax.jpg);
+    background-image: url(assets/img/annie-spratt-tKpA64QrccM-unsplash.jpg);
     background-attachment: fixed;
     background-color: #151C21;
 }    
@@ -31,6 +31,9 @@ main{
     align-items: center;
 }
 
+main h2 {
+    color: var(--accent-color);
+}
 
 /* ----------NAV BAR-------------- */
 
@@ -71,12 +74,16 @@ main{
 
 /* ABOUT THE DISTRICT  */
 
+.label-food {
+    width: 60px;
+}
+
 .card-about h5{
     color: var(--logo-color);
 }
 
-.title {
-    color: var(--accent-color);
+header h5 {
+    color: var(--logo-color);
 }
 
 
@@ -86,17 +93,40 @@ main{
 }
 
 .video {
+    width: 100%;
     height: 250px;
+    object-position: bottom;
 }
 
 
 /* CATEGORIE */
 
 
-h2{
+.hightlight h2{
     text-decoration: underline;
     text-underline-offset: 7px;
+    color: var(--accent-color);
 }
+
+/* CARD*/
+
+.row-categorie {
+    max-width: 800px;
+}
+
+.card img{
+    width: 100px;
+    height: 100px;
+}
+
+.card a img{
+    background: var(--accent-color);
+    padding: 5px 10px;
+    width: 50px;
+    height: 40px;
+    border-radius: 20px;
+}
+
 
 .card-up {
     background: var(--white-color);
@@ -121,7 +151,7 @@ h2{
     object-fit: cover;
 }
 
-/* ANIMATION HOVER */
+/* ANIMATION CARD HOVER */
 
 .card-up:hover {
     opacity: 1;
@@ -129,7 +159,10 @@ h2{
 }
 
 
-/* TITLE STARS */
+
+
+
+/* TITLE VEDETTE */
 
 .container-stars{
     animation: shake 1s alternate infinite;
@@ -157,29 +190,9 @@ h2{
 }
 
 
-
-/* CARD CATEGORIE*/
-
-.row-categorie {
-    max-width: 800px;
-}
-
-.card img{
-    width: 100px;
-    height: 100px;
-}
-
-.card a img{
-    background: var(--accent-color);
-    padding: 5px 10px;
-    width: 50px;
-    height: 40px;
-    border-radius: 20px;
-}
-
 /* CAROUSEL */
 .carousel {
-    width: 250px;
+    width: 350px;
     margin: 0 auto;
     margin-bottom: 10px;
 }
@@ -187,6 +200,8 @@ h2{
 .carousel-inner {
     border-radius: 20px;
 }
+
+
 
 /* BLOCK AVIS */
 .block-avis{
@@ -244,9 +259,6 @@ h2{
 }
 
 
-footer img {
-    bottom: 0;
-}
 
 
 
