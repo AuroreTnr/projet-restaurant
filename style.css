@@ -12,6 +12,7 @@ body {
     background-image: url(assets/img/annie-spratt-tKpA64QrccM-unsplash.jpg);
     background-attachment: fixed;
     background-color: #151C21;
+    font-size: clamp(10px, 3vmin, 16px);
 }    
 
 /* ----------GÉNÉRAL-------------- */
@@ -33,7 +34,11 @@ main{
 
 main h2 {
     color: var(--accent-color);
+
 }
+
+
+/* ---------------------------------------------------------- */
 
 /* ----------NAV BAR-------------- */
 
@@ -53,6 +58,7 @@ main h2 {
     color: var(--accent-color);
 }
 
+/* ------------------------------------------------------------- */
 
 /* ----------BANNIERE-------------- */
 
@@ -72,27 +78,21 @@ main h2 {
     font-family: updock, cursive;
 }
 
+/* ------------------------------------------------------------------ */
+
 /* ABOUT THE DISTRICT  */
 
 .label-food {
     width: 60px;
     border-radius: 50%;
-    border: 1px solid var(--logo-color);
-}
-
-.card-about h5{
-    color: var(--logo-color);
-}
-
-header h5 {
-    color: var(--logo-color);
+    border: 1px solid var(--accent-color);
 }
 
 
-
-.container-float h5 {
-    color: var(--logo-color);
+header span {
+    color: var(--accent-color);
 }
+
 
 .video {
     width: 100%;
@@ -100,36 +100,30 @@ header h5 {
     object-position: bottom;
 }
 
-
-.container-district p, .container-district h5{
-    font-size: 10px;
+.container-district {
+    max-width: 700px;
+    font-size: clamp(10px, 2vmin, 16px);
 }
 
-.nav-item a {
-    font-size: 13px;
+.container-district h5 {
+    color: var(--logo-color);
 }
 
 
+/* ---------------------------------------------------- */
 
 /* CATEGORIE */
 
-
-.hightlight h2{
-    text-decoration: underline;
-    text-underline-offset: 7px;
-    color: var(--accent-color);
-}
-
 .card img{
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 }
 
 .card a img{
     background: var(--accent-color);
     padding: 5px 10px;
-    width: 50px;
-    height: 40px;
+    width: 30px;
+    height: 20px;
     border-radius: 20px;
 }
 
@@ -137,6 +131,7 @@ header h5 {
 .card-up {
     background: var(--white-color);
     opacity: 0;
+    font-size: 10px;
 }
 
 .card-down {
@@ -164,29 +159,20 @@ header h5 {
     transition: opacity .4s ease-in;
 }
 
-.test-card {
-    height: 100px;
-}
-
-
-
+/* ---------------------------------------------------- */
 /* TITLE VEDETTE */
+
 
 .container-stars{
     margin: 0 auto;
-    animation: shake 1s alternate infinite;
+    animation: shake .8s alternate infinite;
 }
 
 .container-stars h2{
     text-decoration: underline;
     text-underline-offset: 7px;
-    font-size: 4vmin;
 }
 
-.container-stars span{
-    top: -10px;
-    left: -50px;
-}
 
 /* ANIMATION STARS */
 
@@ -200,6 +186,7 @@ header h5 {
 }
 
 
+/* ------------------------------------------ */
 /* CAROUSEL */
 .carousel {
     max-width: 350px;
@@ -213,15 +200,17 @@ header h5 {
 /* BLOCK AVIS */
 .container-avis {
     max-width: 350px;
-    font-size: 10px;
+    font-size: 13px;
     color: var(--white-color);
 }
 
 /* FOOTER CONTACT */
 
 .container-footer {
-    font-size: 10px;
+    font-size: 12px;
     background: var(--accent-color);
+    /* color: var(--white-color); */
 }
+
 
 
