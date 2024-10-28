@@ -76,6 +76,8 @@ main h2 {
 
 .label-food {
     width: 60px;
+    border-radius: 50%;
+    border: 1px solid var(--logo-color);
 }
 
 .card-about h5{
@@ -99,6 +101,16 @@ header h5 {
 }
 
 
+.container-district p, .container-district h5{
+    font-size: 10px;
+}
+
+.nav-item a {
+    font-size: 13px;
+}
+
+
+
 /* CATEGORIE */
 
 
@@ -106,12 +118,6 @@ header h5 {
     text-decoration: underline;
     text-underline-offset: 7px;
     color: var(--accent-color);
-}
-
-/* CARD*/
-
-.row-categorie {
-    max-width: 800px;
 }
 
 .card img{
@@ -158,19 +164,23 @@ header h5 {
     transition: opacity .4s ease-in;
 }
 
-
+.test-card {
+    height: 100px;
+}
 
 
 
 /* TITLE VEDETTE */
 
 .container-stars{
+    margin: 0 auto;
     animation: shake 1s alternate infinite;
 }
 
 .container-stars h2{
     text-decoration: underline;
     text-underline-offset: 7px;
+    font-size: 4vmin;
 }
 
 .container-stars span{
@@ -192,75 +202,26 @@ header h5 {
 
 /* CAROUSEL */
 .carousel {
-    width: 350px;
+    max-width: 350px;
     margin: 0 auto;
     margin-bottom: 10px;
 }
 
-.carousel-inner {
-    border-radius: 20px;
-}
 
 
 
 /* BLOCK AVIS */
-.block-avis{
-    width: 280px;
-    height: 160px;
-    margin: 10px auto;
-    align-items: center;
-    flex-wrap: nowrap;
-    flex-shrink: 1;
-    overflow: hidden;
-}
-.box {
-    width: 100%;
-    animation: slideavis 7s ease-in-out alternate infinite;
-}
-
-.box p {
+.container-avis {
+    max-width: 350px;
+    font-size: 10px;
     color: var(--white-color);
-    line-height: 1.7;
 }
 
-/* ANIMATION BLOCK AVIS*/
+/* FOOTER CONTACT */
 
-@keyframes slideavis {
-    0% {
-        transform: translateY(0px);
-    }
-    10% {
-        transform: translateY(0px);
-    }
-    20% {
-        transform: translateY(0px);
-    }
-    35% {
-        transform: translateY(-36%);
-    }
-    40% {
-        transform: translateY(-36%);
-    }
-    50% {
-        transform: translateY(-36%);
-    }
-    70% {
-        transform: translateY(-36%);
-    }
-    85% {
-        transform: translateY(-70%);
-    }
-    90% {
-        transform: translateY(-70%);
-    }
-    100% {
-        transform: translateY(-70%);
-    }
+.container-footer {
+    font-size: 10px;
+    background: var(--accent-color);
 }
-
-
-
-
-
 
 
