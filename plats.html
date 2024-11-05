@@ -22,6 +22,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <!-- cdn typo -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typo.js/1.1.0/typo.min.js"></script>
 </head>
 
 <body class="bg-dark">
@@ -42,7 +44,6 @@
                 <a href="/panier.html" class="d-md-flex order-md-5"><i class="bi bi-cart panier"></i></a>
                 <a href="/user-account.html" class="d-md-flex order-md-5"><i
                         class="bi bi-person-circle account"></i></a>
-                <a href="/plats.html" class="d-sm-flex d-md-none"><i class="bi bi-search recherche"></i></a>
 
                 <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
@@ -76,22 +77,17 @@
             <img src="/assets/img/bg3.jpeg" class="card-img position-relative"
                 alt="jeune femme dégustant son repas au restaurant le district">
             <div class="text-banniere position-absolute">
-                <h1>Plats</h1>
-                <form class="d-flex d-none d-md-flex" role="search">
+                <h1 class="text-center">Plats</h1>
                     <div class="input-group input-group-sm mb-3">
                         <input type="text" class="form-control search-input" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-sm" placeholder="Entrez votre recherche">
-                        <button class="input-group-text" type="submit" id="inputGroup-sizing-sm"><i
+                        <span class="input-group-text" id="inputGroup-sizing-sm"><i
                                 class="bi bi-search"></i>
-                        </button>
+                        </span>
                     </div>
-                </form>
             </div>
         </div>
     </header>
-
-
-
 
     <!-- PLAT -->
     <section>
@@ -99,8 +95,8 @@
         <div class="container container-plat d-flex justify-content-center p-3">
             <div class="row row-plat align-items-center justify-content-center">
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="burger charolais" >
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="burger charolais" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/burger/burger-charolais.jpg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -114,10 +110,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="burger classique">
-                        <img src="/assets/img/food_img/burger/hamburger.jpg" class="object-fit-cover rounded-start float-start w-25 me-2"
-                            alt="...">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="burger classique" id="list-item">
+                    <div class="bg-light d-flex border rounded">
+                        <img src="/assets/img/food_img/burger/hamburger.jpg"
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Burger classique</h5>
                             <p class="card-text">Some quick example text to build on
@@ -129,10 +125,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="burger cheese">
-                        <img src="/assets/img/food_img/burger/cheesburger.jpg" class="object-fit-cover rounded-start float-start w-25 me-2"
-                            alt="...">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="burger cheese" id="list-item">
+                    <div class="bg-light d-flex border rounded">
+                        <img src="/assets/img/food_img/burger/cheesburger.jpg"
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Cheesburger</h5>
                             <p class="card-text">Some quick example text to build on
@@ -144,8 +140,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="burger double-burger">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="burger double-burger" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/burger/double-burger.jpeg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -159,8 +155,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="pizza pizza-margarita veggie">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pizza pizza-margarita veggie" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img//food_img/pizza/pizza-margherita.jpg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -174,8 +170,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="pizza saumon">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pizza saumon" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img//food_img/pizza/pizza-salmon.png"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -189,8 +185,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="pizza fromage-basilic veggie">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pizza fromage-basilic veggie" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img//food_img/pizza/pizza-fromage-basilic.jpg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -204,8 +200,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="pizza chorizo">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pizza chorizo" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img//food_img/pizza/pizza-chorizo.jpg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -219,8 +215,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="pate pate-legume veggie">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pate pate-legume veggie" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/pasta/spaghetti-legumes.jpg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -234,8 +230,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="pate tagliatelles-saumon">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pate tagliatelles-saumon" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/pasta/tagliatelles-saumon.webp"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -249,8 +245,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="pate lasagne">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pate lasagne" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/pasta/lasagnes_viande.jpg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -264,8 +260,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="sandwish sandwish-fromage veggie">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="sandwish sandwish-fromage veggie" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/sandwish/sandwish-fromage.jpg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -279,8 +275,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="sandwish sandwish-roti-crudite">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="sandwish sandwish-roti-crudite" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/sandwish/sandwish roti-crudite.jpg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -294,8 +290,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="sandwish maxi-sandwish">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="sandwish maxi-sandwish" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/sandwish/maxi-sandwish.jpg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -309,8 +305,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="asiatique soupe-asiatique veggie">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="asiatique soupe-asiatique veggie" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/asiatique-food/soupe-asiatique.jpg"
                             class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
@@ -324,10 +320,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="asiatique ravioli">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="asiatique ravioli" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/asiatique-food/ravioli.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Raviolli</h5>
                             <p class="card-text">Some quick example text to build on
@@ -339,10 +335,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="asiatique riz-cantonais veggie">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="asiatique riz-cantonais veggie" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/asiatique-food/riz-cantonais.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Riz Cantonais</h5>
                             <p class="card-text">Some quick example text to build on
@@ -354,10 +350,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="salade salade-du-chef veggie">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="salade salade-du-chef veggie" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/salade/salade-du-chef.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Salade du Chef</h5>
                             <p class="card-text">Some quick example text to build on
@@ -369,10 +365,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="salade salade-4-saison veggie">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="salade salade-4-saison veggie" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/salade/salade-fraicheur.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Salade fraîcheur</h5>
                             <p class="card-text">Some quick example text to build on
@@ -384,10 +380,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="salade salade-composee veggie">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="salade salade-composee veggie" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/salade/salade-composee.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Salade composée</h5>
                             <p class="card-text">Some quick example text to build on
@@ -399,10 +395,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="wrap wrap-mexican">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="wrap wrap-mexican" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/wrap/wrap-mexicain.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Wrap Mexicain</h5>
                             <p class="card-text">Some quick example text to build on
@@ -414,10 +410,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="wrap wrap-poulet">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="wrap wrap-poulet" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/wrap/wrap-poulet.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Wrap Poulet</h5>
                             <p class="card-text">Some quick example text to build on
@@ -429,10 +425,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="wrap wrap-poulet-crudite">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="wrap wrap-poulet-crudite" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/wrap/wrap-crudite.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Wrap Poulet Cruditée</h5>
                             <p class="card-text">Some quick example text to build on
@@ -444,10 +440,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="veggie compotee-legume">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="veggie compotee-legume" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/veggie/compotee-de-legumes.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Compotée de légumes</h5>
                             <p class="card-text">Some quick example text to build on
@@ -459,10 +455,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="veggie burger-veggie burger ">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="veggie burger-veggie burger" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/veggie/burger-veggie.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Burger veggie</h5>
                             <p class="card-text">Some quick example text to build on
@@ -474,10 +470,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="veggie bouillon-legume ">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="veggie bouillon-legume" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/veggie/bouillon-legume.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Bouillon de legumes</h5>
                             <p class="card-text">Some quick example text to build on
@@ -489,10 +485,10 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2">
-                    <div class="bg-light d-flex border rounded main-card" class="veggie poelee-du-chef ">
+                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="veggie poelee-du-chef" id="list-item">
+                    <div class="bg-light d-flex border rounded">
                         <img src="/assets/img/food_img/veggie/poelee-du-chef.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="..." >
+                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
                         <div class="p-2 d-flex flex-column">
                             <h5 class="title fs-6 name-food">Poêlée du Chef</h5>
                             <p class="card-text">Some quick example text to build on
@@ -537,12 +533,11 @@
 
 
 
-
-
+    <!-- CND bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="script-plat.js" type="module"></script>
 </body>
 
 </html>
