@@ -3,13 +3,13 @@ const input = document.querySelector(".search-input");
 const listItem = document.querySelectorAll("#list-item");
 
 
-
+//nettoie la chaine
 function nettoyerMot(mot) {
     return mot.replace(/[^a-zA-Z]/g, '').toLowerCase();
   }
   
 
-
+// filtre
 input.addEventListener("input", filterItems);
 
 function filterItems(){
