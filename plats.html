@@ -2,542 +2,393 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plats</title>
-    <link rel="stylesheet" href="/assets/css/plat.css">
-    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- ICON BOOTSTRAP -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- FONT UPDOCK-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
-    <!-- FONT POPPINS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <!-- cdn typo -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typo.js/1.1.0/typo.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plat</title>
+  <link rel="stylesheet" href="./assets/css/categorie.css">
+  <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- ICON BOOTSTRAP -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- FONT UPDOCK-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
+  <!-- FONT POPPINS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="bg-dark">
 
 
 
-    <!-- NAV HEADER -->
-    <header class="mb-5">
-        <nav class="navbar navbar-expand-lg bg-dark p-1 justify-content-center">
-            <div class="container-fluid d-flex justify-content-center gap-4">
-                <button class="navbar-toggler me-auto" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <i class="btn-burger bi bi-three-dots-vertical"></i>
-                </button>
-                <a href="/accueil.html" class="me-auto"><img src="assets/img/logo_transparent.png" class="logo"
-                        alt="logo le district"></a>
+  <!-- NAV HEADER -->
+  <header>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-dark p-1 justify-content-center">
+      <div class="container-fluid d-flex justify-content-center gap-4">
+        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <i class="btn-burger bi bi-three-dots-vertical"></i>
+        </button>
+        <a href="/accueil.html" class="me-auto"><img src="assets/img/logo_transparent.png" class="logo"
+            alt="logo le district"></a>
 
-                <a href="/panier.html" class="d-md-flex order-md-5"><i class="bi bi-cart panier"></i></a>
-                <a href="/user-account.html" class="d-md-flex order-md-5"><i
-                        class="bi bi-person-circle account"></i></a>
+        <a href="/panier.html" class="d-md-flex order-md-5"><i class="bi bi-cart panier"></i></a>
+        <a href="/user-account.html" class="d-md-flex order-md-5"><i class="bi bi-person-circle account"></i></a>
 
-                <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <label id="offcanvasNavbarLabel">Burger</label>
-                        <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body d-flex justify-content-center">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link text-uppercase" aria-current="page" href="/accueil.html">Accueil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-uppercase" href="/categorie.html">catégorie</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-uppercase" href="/plats.html">plats</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-uppercase" href="/contact.html">contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <!-- BANNIERE -->
-        <div class="container-items position-relative d-flex justify-content-center align-items-center">
-            <img src="/assets/img/bg3.jpeg" class="card-img position-relative"
-                alt="jeune femme dégustant son repas au restaurant le district">
-            <div class="text-banniere position-absolute">
-                <h1 class="text-center">Plats</h1>
-                    <div class="input-group input-group-sm mb-3">
-                        <input type="text" class="form-control search-input" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm" placeholder="Entrez votre recherche">
-                        <span class="input-group-text" id="inputGroup-sizing-sm"><i
-                                class="bi bi-search"></i>
-                        </span>
-                    </div>
-            </div>
+        <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <label id="offcanvasNavbarLabel">Burger</label>
+            <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body d-flex justify-content-center">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" aria-current="page" href="/accueil.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" href="/categorie.html">catégorie</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" href="/plats.html">plats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" href="/contact.html">contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </header>
+      </div>
+    </nav>
+
+    <!-- BANNIERE -->
+    <div class="container-items position-relative d-flex justify-content-center align-items-center">
+      <img src="assets/img/bg3.jpeg" class="card-img position-relative"
+        alt="jeune femme dégustant son repas au restaurant le district">
+      <div class="text-banniere position-absolute">
+        <h5 class="card-title text-white">Plat</h5>
+        <div class="input-group input-group-sm mb-3">
+          <input type="text" class="form-control search-input" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-sm" placeholder="Entrez votre recherche">
+          <span class="input-group-text" id="inputGroup-sizing-sm"><i
+                  class="bi bi-search"></i>
+          </span>
+      </div>
+</div>
+    </div>
+
+    <div class="container-filter">
+    </div>
+
+
+    <!-- QUALITE RESTAURANT -->
+    <div class="container-fluid container-district">
+      <div class="row d-flex justify-content-center text-center text-white p-3">
+        <div class="col-4">
+          <img src="assets/svgs/fish.svg" alt="" class="label-food mb-3">
+          <span class="title d-block">Premium Quality</span>
+        </div>
+        <div class="col-4">
+          <img src="assets/svgs/vegetables.svg" alt="" class="label-food mb-3">
+          <span class="title d-block">Seasonal Vegetables</span>
+        </div>
+        <div class="col-4">
+          <img src="assets/svgs/fruit.svg" alt="" class="label-food mb-3">
+          <span class="title d-block">Fresh Fruit</span>
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+
+  <main>
 
     <!-- PLAT -->
     <section>
 
-        <div class="container container-plat d-flex justify-content-center p-3">
-            <div class="row row-plat align-items-center justify-content-center">
+      <div class="container-fluid p-4 container-categorie">
+          <div class="row align-items-center justify-content-center">
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="burger charolais" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/burger/burger-charolais.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Burger charolais</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="burger charolais">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/burger/burger-charolais.jpg" class="img-fluid rounded-start" alt="burger charolais">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="burger classique" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/burger/hamburger.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Burger classique</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Burger charolais</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="burger cheese" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/burger/cheesburger.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Cheesburger</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="burger cheesburger">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/burger/cheesburger.jpg" class="img-fluid rounded-start" alt="cheesburger">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="burger double-burger" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/burger/double-burger.jpeg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Double burger</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Cheesburger</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pizza pizza-margarita veggie" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img//food_img/pizza/pizza-margherita.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Margarita</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="double burger">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/burger/double-burger.jpeg" class="img-fluid rounded-start" alt="double burger">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pizza saumon" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img//food_img/pizza/pizza-salmon.png"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Pizza saumon</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Double burger</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pizza fromage-basilic veggie" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img//food_img/pizza/pizza-fromage-basilic.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Pizza fromage basilic</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="burger classique">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/burger/hamburger.jpg" class="img-fluid rounded-start" alt="burger classique">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pizza chorizo" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img//food_img/pizza/pizza-chorizo.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Pizza chorizo</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Le classique</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pate pate-legume veggie" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/pasta/spaghetti-legumes.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Pâtes aux légumes</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="asiatique ravioli">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/asiatique-food/ravioli.jpg" class="img-fluid rounded-start" alt="asiatique ravioli">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pate tagliatelles-saumon" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/pasta/tagliatelles-saumon.webp"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Tagliatelles saumon</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">asiatique ravioli</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="pate lasagne" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/pasta/lasagnes_viande.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Lasagnes</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="asiatique riz cantonais">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/asiatique-food/riz-cantonais.jpg" class="img-fluid rounded-start" alt="asiatique riz cantonais">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="sandwish sandwish-fromage veggie" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/sandwish/sandwish-fromage.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Sandwish au fromage</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Riz cantonais</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="sandwish sandwish-roti crudite" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/sandwish/sandwish-roti-crudite.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Sandwish roti cruditée</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="soupe asiatique">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/asiatique-food/soupe-asiatique.jpg" class="img-fluid rounded-start" alt="soupe asiatique">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="sandwish maxi-sandwish" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/sandwish/maxi-sandwish.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Maxi sandwish club</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Soupe asiatique</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="asiatique soupe-asiatique veggie" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/asiatique-food/soupe-asiatique.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Soupe asiatique</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="pate lasagne">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/pasta/lasagnes_viande.jpg" class="img-fluid rounded-start" alt="pate lasagne">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="asiatique ravioli" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/asiatique-food/ravioli.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Raviolli</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Lasagne</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="asiatique riz-cantonais veggie" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/asiatique-food/riz-cantonais.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Riz Cantonais</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              </div>
+              
+              <div class="col-9 col-md-6 col-lg-3" data-key="pate legumes">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/pasta/spaghetti-legumes.jpg" class="img-fluid rounded-start" alt="pate legumes">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="salade salade-du-chef veggie" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/salade/salade-du-chef.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Salade du Chef</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Spaghetti-legumes</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="salade salade-4-saison veggie" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/salade/salade-fraicheur.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Salade fraîcheur</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="pate tagliatelles saumon">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/pasta/tagliatelles-saumon.webp" class="img-fluid rounded-start" alt="pate tagliatelles saumon">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="salade salade-composee veggie" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/salade/salade-composee.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Salade composée</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Tagliatelles saumon</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="wrap wrap-mexican" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/wrap/wrap-mexicain.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Wrap Mexicain</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="pizza chorizo">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/pizza/pizza-chorizo.jpg" class="img-fluid rounded-start" alt="pizza chorizo">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="wrap wrap-poulet" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/wrap/wrap-poulet.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Wrap Poulet</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Pizza chorizo
+                          pizza chorizo</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="wrap wrap-poulet-crudite" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/wrap/wrap-crudite.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Wrap Poulet Cruditée</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="pizza margherita">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/pizza/pizza-margherita.jpg" class="img-fluid rounded-start" alt="pizza margherita">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="veggie compotee-legume" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/veggie/compotee-de-legumes.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Compotée de légumes</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Pizza margherita</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="veggie burger-veggie burger" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/veggie/burger-veggie.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Burger veggie</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="pizza basilic">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/pizza/pizza-fromage-basilic.jpg" class="img-fluid rounded-start" alt="pizza basilic">
                     </div>
-                </div>
-
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="veggie bouillon-legume" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/veggie/bouillon-legume.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Bouillon de legumes</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Pizza basilic</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-12 col-md-7 col-lg-4 mt-2" data-key="veggie poelee-du-chef" id="list-item">
-                    <div class="bg-light d-flex border rounded">
-                        <img src="/assets/img/food_img/veggie/poelee-du-chef.jpg"
-                            class="object-fit-cover rounded-start float-start w-25 me-2" alt="...">
-                        <div class="p-2 d-flex flex-column">
-                            <h5 class="title fs-6 name-food">Poêlée du Chef</h5>
-                            <p class="card-text">Some quick example text to build on
-                            <div class="d-flex justify-content-between align-items-baseline mt-auto">
-                                <p class="fw-bold">8€</p>
-                                <button class="btn btn-pills bg-warning"><i class="bi bi-plus text-light"></i></button>
-                            </div>
-                        </div>
+              <div class="col-9 col-md-6 col-lg-3" data-key="salade salade composee">
+                <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="./assets/img/food_img/salade/salade-composee.jpg" class="img-fluid rounded-start" alt="salade salade composee">
                     </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Salade composee</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-
+              </div>
 
             </div>
+  </section>
 
+
+
+
+  </main>
+
+  
+  
+  <footer>
+    <div class="container-footer d-flex flex-column gap-4 p-4 text-light">
+      <!-- VIDEO -->
+      <video src="assets/video/video_medium.mp4" class="video rounded-top object-fit-cover border-bottom" muted
+        autoplay loop></video>
+      <div class="d-flex gap-3">
+        <div>
+          <span class="d-block fw-bold">Contacter nous</span>
+          <span class="d-block"><i class="bi bi-geo-alt-fill me-1"></i>Lorem ipsum dolor sit, amet</span>
+          <span class="d-block"><i class="bi bi-telephone-fill me-1"></i>03 23 51 25 12</span>
+          <span class="d-block"><i class="bi bi-envelope-at me-1"></i>the-district@gmail.fr</span>
+          <span class="d-block"><i class="bi bi-clock me-1"></i>Sun - Sat / 10:00 AM - 8:00 PM</span>
         </div>
-    </section>
-
-
-
-    <footer class="mt-5">
-        <div class="container-footer d-flex gap-4 p-4 text-light">
-            <div>
-                <span class="d-block fw-bold">Contacter nous</span>
-                <span class="d-block"><i class="bi bi-geo-alt-fill me-1"></i>Lorem ipsum dolor sit, amet</span>
-
-                <span class="d-block"><i class="bi bi-telephone-fill me-1"></i>03 23 51 25 12</span>
-
-                <span class="d-block"><i class="bi bi-envelope-at me-1"></i>the-district@gmail.fr</span>
-
-                <span class="d-block"><i class="bi bi-clock me-1"></i>Sun - Sat / 10:00 AM - 8:00 PM</span>
-            </div>
-
-            <div>
-                <span class="d-block fw-bold">The district</span>
-                <i class="bi bi-instagram me-1"></i>
-                <i class="bi bi-facebook me-1"></i>
-                <i class="bi bi-twitter-x me-1"></i>
-            </div>
+        
+        <div>
+          <span class="d-block fw-bold">The district</span>
+          <i class="bi bi-instagram me-1"></i>
+          <i class="bi bi-facebook me-1"></i>
+          <i class="bi bi-twitter-x me-1"></i>
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
 
 
 
-    <!-- CND bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="script-plat.js" type="module"></script>
+
+  <!-- cdn bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script src="./script-plat.js" type="module"></script>
 </body>
 
 </html>
