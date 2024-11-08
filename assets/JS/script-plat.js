@@ -1,5 +1,21 @@
-// import dictonnaire from "dictionary-fr"
-// console.log(dictonnaire);
+// implémentation de Fuse.js
+
+// 1. Créer un tableau de tes éléments (plats)
+const plats = [
+  {id: 1, name: 'burger charolais'},
+  {id: 2, name: 'cheesburger'},
+  {id: 3, name: 'classique'},
+];
+
+// 2. Initialiser Fuse.js avec les options de configuration
+const options = {
+  keys: ['name'],
+  includeScore: true,
+  threshold: 0.3
+};
+const fuse = new Fuse(plats, options);
+
+// à étudier
 
 
 
@@ -50,39 +66,41 @@ function filterElementValueFromInput(){
 
 
 // Filtre les éléments en fonction de la valeur du local storage instancier lors du clique effectué sur la page catégorie.
-window.addEventListener("load", filterElementValueFromCategorie);
 
-function filterElementValueFromCategorie(){
+  window.addEventListener("load", filterElementValueFromCategorie);
 
-  // but supprimer le local storage quand on clique sur plat de la nav 
-  if (transfertDonnee === undefined) {
-    clearLocalStorage();
-    return
+  function filterElementValueFromCategorie(){
+
+    // Afficher en fonction de la presence ou non de la key categorie dans ler local storage.
+    if (localStorage.getItem("categorie")) {
+      listItem.forEach(card => {
+
+        FilterElementDisplay(card, "data-key", transfertDonnee);
+      })
+  
+    }else {
+      listItem.forEach(card => {
+        card.style.display="";
+      })
+    }
+    
+  
   }
-  
-  listItem.forEach(card => {
-
-    FilterElementDisplay(card, "data-key", transfertDonnee);
-
-  })
-  
-}
-// console.log(transfertDonnee);
 
 
 
-// but supprimer le local storage quand on clique sur plat de la nav
+// Clear le local storage au clique du lien plat afin d afficher tous les plats. Sans créer de bug lié au local storage.
 linkPlat.addEventListener("click", clearLocalStorage);
 
-function clearLocalStorage(e) {
-  e.preventDefault();
-  listItem.forEach(card =>{
+function clearLocalStorage() {
+  localStorage.removeItem("categorie");
+
+  listItem.forEach(card => {
     card.style.display="";
-  })
+  });
 }
 
 
-//  CLEAR LE LOCAL STORAGE SUR LE FICHIER .JS LA PAGE ACCUEIL;
 
 // https://alexandre.alapetite.fr/doc-alex/alx_special.html
 
