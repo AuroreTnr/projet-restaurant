@@ -1,0 +1,194 @@
+[
+    {
+        "id": 1,
+        "name": "Burger charolais",
+        "categorie": "burger",
+        "image": "./assets/img/food_img/burger/burger-charolais.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 2,
+        "name": "Cheesburger",
+        "categorie": "burger",
+        "image": "./assets/img/food_img/burger/cheesburger.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 3,
+        "name": "Le classique",
+        "categorie": "burger",
+        "image": "./assets/img/food_img/burger/hamburger.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 4,
+        "name": "Pizza chorizo",
+        "categorie": "pizza",
+        "image": "./assets/img/food_img/pizza/pizza-chorizo.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 5,
+        "name": "Pizza basilic",
+        "categorie": "pizza veggie",
+        "image": "./assets/img/food_img/pizza/pizza-fromage-basilic.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 6,
+        "name": "Pizza saumon",
+        "categorie": "pizza",
+        "image": "./assets/img/food_img/pizza/pizza-salmon.png",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 7,
+        "name": "Spaghetti legumes",
+        "categorie": "pate veggie",
+        "image": "./assets/img/food_img/pasta/spaghetti-legumes.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 8,
+        "name": "Lasagne",
+        "categorie": "pate",
+        "image": "./assets/img/food_img/pasta/lasagnes_viande.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 9,
+        "name": "Salade du chef",
+        "categorie": "salade veggie",
+        "image": "./assets/img/food_img/salade/salade-du-chef.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 10,
+        "name": "Salade fraicheur",
+        "categorie": "salade veggie",
+        "image": "./assets/img/food_img/salade/salade-fraicheur.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 11,
+        "name": "Salade composée",
+        "categorie": "salade veggie",
+        "image": "./assets/img/food_img/salade/salade-composee.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 12,
+        "name": "Sandwish roti crudite",
+        "categorie": "sandwish",
+        "image": "./assets/img/food_img/sandwish/sandwish-roti-crudite.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 13,
+        "name": "Sandwish fromage",
+        "categorie": "sandwish veggie",
+        "image": "./assets/img/food_img/sandwish/sandwish-fromage.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 14,
+        "name": "Maxi sandwish",
+        "categorie": "sandwish",
+        "image": "./assets/img/food_img/sandwish/maxi-sandwish.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 15,
+        "name": "Bouillon de legumes",
+        "categorie": "veggie",
+        "image": "./assets/img/food_img/veggie/bouillon-legume.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 16,
+        "name": "Burger veggie",
+        "categorie": "veggie burger",
+        "image": "./assets/img/food_img/veggie/burger-veggie.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 17,
+        "name": "Poêlée du chef",
+        "categorie": "veggie",
+        "image": "./assets/img/food_img/veggie/poelee-du-chef.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 18,
+        "name": "Wrap crudite",
+        "categorie": "wrap",
+        "image": "./assets/img/food_img/wrap/wrap-crudite.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 18,
+        "name": "Wrap mexicain",
+        "categorie": "wrap",
+        "image": "./assets/img/food_img/wrap/wrap-mexicain.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 20,
+        "name": "Wrap poulet",
+        "categorie": "wrap",
+        "image": "./assets/img/food_img/wrap/wrap-poulet.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 21,
+        "name": "Ravioli",
+        "categorie": "asiatique",
+        "image": "./assets/img/food_img/asiatique-food/ravioli.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 22,
+        "name": "Riz cantonais",
+        "categorie": "asiatique veggie",
+        "image": "./assets/img/food_img/asiatique-food/riz-cantonais.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 23,
+        "name": "Soupe asiatique",
+        "categorie": "asiatique",
+        "image": "./assets/img/food_img/asiatique-food/soupe-asiatique.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    },
+    {
+        "id": 24,
+        "name": "Sushi",
+        "categorie": "asiatique",
+        "image": "./assets/img/food_img/asiatique-food/sushi.jpg",
+        "prix": 8,
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+    }
+]
