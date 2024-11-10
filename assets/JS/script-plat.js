@@ -8,26 +8,27 @@ const containerPlat = document.querySelector(".container-plat");
 
 
 // Appelle data 
+
 window.addEventListener("load", appelData);
+input.addEventListener("input", appelData);
+
 async function appelData() {
   const response = await fetch("./data.json");
-  // console.log(response);
   const data = await response.json();
-  // console.log(data);
 
   let cardFood;
 
-  data.forEach(food => {
+  // creation des cards
+    data.forEach(food => {
     cardFood = document.createElement("div");
     cardFood.classList.add("col-9");
     cardFood.classList.add("col-md-6");
     cardFood.classList.add("col-lg-3");
     cardFood.classList.add("food-card");
     cardFood.setAttribute("data-key", food.categorie + " " + food.name);
-    // console.log(cardFood);
     
     cardFood.innerHTML = `
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-3" style="max-width: 540px; min-width: 198px;">
                   <div class="row g-0">
                     <div class="col-md-2">
                       <img src= ${food.image} class="img-fluid rounded-start" alt="burger charolais">
@@ -57,51 +58,80 @@ async function appelData() {
 
 
 
-//Fonction qui nettoie la chaine de caractère
-function nettoyerMot(mot) {
-    return mot.replace(/[^a-zA-Z ]/g, '').toLowerCase().trim();
-}
 
-//Fonction qui filtre les éléments
-function FilterElementDisplay(element, attributRecherche, stringRecherche){
-  element.getAttribute(attributRecherche).toLowerCase().includes(stringRecherche) ? element.style.display="" : element.style.display="none";
-}
+// Instanciation de fuse.js
 
-
-// Filtre les éléments en fonction de la valeur entrée dans l input
-input.addEventListener("input", filterElementValueFromInput);
-
-function filterElementValueFromInput(){
-
-  appelData()
-    
-  const mot = this.value;
-  let motUtilisateur = nettoyerMot(mot).toLowerCase();
-
-  listItem.forEach(card => {
-
-    FilterElementDisplay(card, "data-key", motUtilisateur)
-
-  });
-        
-}
-
-// Instanciation de fuse.js et de la bar de sugession.
 function createFuse(data, cardFood){
+  // instensation de l objet fuse.js
   const fuse = new Fuse(data , {keys : ['name', 'categorie']});
-  // console.log(fuse);
-  // console.log(data);
   
 
+  // Filtre basé sur la valeur du local storage provenant de la page catégorie
+  if (localStorage.getItem("categorie")) {
+    
+    // Renvoie un array Filtre basé sur la valeur du local storage
+    const localResult = fuse.search(localStorage.getItem("categorie"));
+
+    // l array contenent nos objets item
+    const matchLocal = localResult.map(result => result.item)
+    console.log(matchLocal);
+
+    // nettoie les cards précedentes pour n afficher que celle qui match
+    containerPlat.innerHTML="";
+  
+    // création des cards
+    matchLocal.forEach(namePlat => {
+      cardFood = document.createElement("div");
+      cardFood.classList.add("col-9");
+      cardFood.classList.add("col-md-6");
+      cardFood.classList.add("col-lg-3");
+      cardFood.classList.add("food-card");
+      cardFood.setAttribute("data-key", namePlat.categorie.toLocaleLowerCase() + " " + namePlat.name.toLocaleLowerCase());
+      
+      cardFood.innerHTML = `
+                  <div class="card mb-3" style="max-width: 540px;min-width: 198px;">
+                    <div class="row g-0">
+                      <div class="col-md-2">
+                        <img src= ${namePlat.image} class="img-fluid rounded-start" alt="burger charolais">
+                      </div>
+                      <div class="col-md-10">
+                        <div class="card-body">
+                          <div class="d-flex align-items-baseline justify-content-between align-self-end">
+                            <p class="card-text"><small class="text-body-secondary">${namePlat.prix} €</small></p>
+                            <div class="btn small border-warning text-dark border-warning text-dark">add <i class="bi bi-plus"></i></div>
+                          </div>
+                          <h5 class="card-title">${namePlat.name}</h5>
+                          <p class="card-text">${namePlat.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+      `
+      containerPlat.appendChild(cardFood);
+
+      //nettoie le localStorage
+      localStorage.removeItem("categorie");
+  
+  });
+    return;
+  }
+
+
+  // Renvoie un array Filtre basé sur la valeur entrée dans l' input
   const results = fuse.search(input.value)
-
+  
+  // l array contenent nos objets item
   const namePlatResults = results.map(result => result.item)
-  // console.log(namePlatResults);
 
+  // Nettoie les cards precedent pour n afficher que celle qui match
   if (input.value) {
     containerPlat.innerHTML="";
   }
 
+
+  // création des cards
   namePlatResults.forEach(namePlat => {
     console.log(namePlat);
 
@@ -111,10 +141,9 @@ function createFuse(data, cardFood){
     cardFood.classList.add("col-lg-3");
     cardFood.classList.add("food-card");
     cardFood.setAttribute("data-key", namePlat.categorie.toLocaleLowerCase() + " " + namePlat.name.toLocaleLowerCase());
-    // console.log(cardFood);
     
     cardFood.innerHTML = `
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-3" style="max-width: 540px;min-width: 198px;">
                   <div class="row g-0">
                     <div class="col-md-2">
                       <img src= ${namePlat.image} class="img-fluid rounded-start" alt="burger charolais">
@@ -139,53 +168,6 @@ function createFuse(data, cardFood){
 });
 
 
-}
-
-
-
-
-
-
-
-// Filtre les éléments en fonction de la valeur du local storage instancier lors du clique effectué sur la page catégorie.
-
-  window.addEventListener("load", filterElementValueFromCategorie);
-  console.log(localStorage);
-
-  
-
-  function filterElementValueFromCategorie(){
-
-    // Afficher en fonction de la presence ou non de la key categorie dans ler local storage.
-    if (localStorage.getItem("categorie")) {
-      listItem.forEach(card => {
-    console.log(card);
-
-        
-
-        FilterElementDisplay(card, "data-key", localStorage.getItem("categorie"));
-      })
-  
-    }else {
-      listItem.forEach(card => {
-        card.style.display="";
-      })
-    }
-    
-  
-  }
-
-
-
-// Clear le local storage au clique du lien plat afin d afficher tous les plats. Sans créer de bug lié au local storage.
-linkPlat.addEventListener("click", clearLocalStorage);
-
-function clearLocalStorage() {
-  localStorage.removeItem("categorie");
-
-  listItem.forEach(card => {
-    card.style.display="";
-  });
 }
 
 

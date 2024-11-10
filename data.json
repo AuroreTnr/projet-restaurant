@@ -42,7 +42,7 @@
     {
         "id": 6,
         "name": "Pizza saumon",
-        "categorie": "pizza",
+        "categorie": "pizza saumon",
         "image": "./assets/img/food_img/pizza/pizza-salmon.png",
         "prix": 8,
         "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
