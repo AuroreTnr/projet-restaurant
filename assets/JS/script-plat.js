@@ -1,5 +1,3 @@
-const linkPlat = document.querySelector(".link-plats");
-const transfertDonnee = localStorage.categorie;
 const input = document.querySelector(".search-input");
 const listItem = document.querySelectorAll(".food-card");
 const containerPlat = document.querySelector(".container-plat");
@@ -74,7 +72,7 @@ function createFuse(data, cardFood){
 
     // l array contenent nos objets item
     const matchLocal = localResult.map(result => result.item)
-    console.log(matchLocal);
+    // console.log(matchLocal);
 
     // nettoie les cards précedentes pour n afficher que celle qui match
     containerPlat.innerHTML="";
@@ -127,13 +125,53 @@ function createFuse(data, cardFood){
 
   // Nettoie les cards precedent pour n afficher que celle qui match
   if (input.value) {
+    containerPlat.innerHTML="";    
+  }
+
+  // permet de remettre toutes les cards quans l input est vide.
+  if (input.value < 1) {
     containerPlat.innerHTML="";
+  // creation des cards
+  data.forEach(food => {
+    cardFood = document.createElement("div");
+    cardFood.classList.add("col-9");
+    cardFood.classList.add("col-md-6");
+    cardFood.classList.add("col-lg-3");
+    cardFood.classList.add("food-card");
+    cardFood.setAttribute("data-key", food.categorie + " " + food.name);
+    
+    cardFood.innerHTML = `
+                <div class="card mb-3" style="max-width: 540px; min-width: 198px;">
+                  <div class="row g-0">
+                    <div class="col-md-2">
+                      <img src= ${food.image} class="img-fluid rounded-start" alt="burger charolais">
+                    </div>
+                    <div class="col-md-10">
+                      <div class="card-body">
+                        <div class="d-flex align-items-baseline justify-content-between align-self-end">
+                          <p class="card-text"><small class="text-body-secondary">${food.prix} €</small></p>
+                          <div class="btn small border-warning text-dark border-warning text-dark">add <i class="bi bi-plus"></i></div>
+                        </div>
+                        <h5 class="card-title">${food.name}</h5>
+                        <p class="card-text">${food.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+    `
+    containerPlat.appendChild(cardFood);
+  
+  })
+    
+    
   }
 
 
   // création des cards
   namePlatResults.forEach(namePlat => {
-    console.log(namePlat);
+    // console.log(namePlat);
 
     cardFood = document.createElement("div");
     cardFood.classList.add("col-9");
