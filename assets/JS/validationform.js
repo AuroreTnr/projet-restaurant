@@ -1,18 +1,64 @@
-// Validation bootstrap
-(() => {
-    'use strict'
-  
-    const forms = document.querySelectorAll('.needs-validation')
-  
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-  
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
+// Sélectionner le formulaire et le bouton
+const form = document.querySelector(".formulaire");
+const btnSubmit = document.querySelector(".btn-submit");
+
+// Sélectionner les messages d'erreur
+const errorMsgNom = document.querySelector(".errorMsg-nom");
+const errorMsgPrenom = document.querySelector(".errorMsg-prenom");
+const errorMsgAdresse = document.querySelector(".errorMsg-adresse");
+const errorMsgchekbox = document.querySelector(".errorMsg-checkbox");
+const allErrorMsg = document.querySelectorAll(".errorMsg");
+
+// Sélectionner les inputs
+const nom = document.querySelector("#validationCustom01");
+const prenom = document.querySelector("#validationCustom02");
+const adresseEmail = document.querySelector("#validationCustom03");
+const checkbox = document.querySelector("#invalidCheck1");
+
+// REGEX pour validation des champs
+const charValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
+const emailValid = /^[a-z0-9.-]+@[a-z0-9.-]{2,}\.[a-z]{2,4}$/;
+
+form.addEventListener('submit', handleSubmit);
+
+function handleSubmit(e) {
+  // Réinitialiser les messages d'erreur
+  allErrorMsg.forEach(msg => msg.textContent = "");
+
+  // Validation pour le nom
+  if (nom.validity.valueMissing) {
+    e.preventDefault();
+    errorMsgNom.textContent = "Entrez votre nom";
+  } else if (!charValid.test(nom.value)) {
+    e.preventDefault();
+    errorMsgNom.textContent = "Format incorrect";
+  }
+
+  // Validation pour le prénom
+  if (prenom.validity.valueMissing) {
+    e.preventDefault();
+    errorMsgPrenom.textContent = "Entrez votre prénom";
+  } else if (!charValid.test(prenom.value)) {
+    e.preventDefault();
+    errorMsgPrenom.textContent = "Format incorrect";
+  }
+
+  // Validation pour l'email
+  if (adresseEmail.validity.valueMissing) {
+    e.preventDefault();
+    errorMsgAdresse.textContent = "Entrez votre adresse email";
+  } else if (!emailValid.test(adresseEmail.value)) {
+    e.preventDefault();
+    errorMsgAdresse.textContent = "Format incorrect";
+  }
+
+  // Validation de la case à cocher
+  if (!checkbox.checked) {
+    e.preventDefault();
+    errorMsgchekbox.style.color="red";
+  }
+}
+
+
+
 
