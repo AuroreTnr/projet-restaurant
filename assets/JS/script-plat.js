@@ -3,21 +3,9 @@ const listItem = document.querySelectorAll(".food-card");
 const containerPlat = document.querySelector(".container-plat");
 
 
-
-
-// Appelle data 
-
-window.addEventListener("load", appelData);
-input.addEventListener("input", appelData);
-
-async function appelData() {
-  const response = await fetch("./data.json");
-  const data = await response.json();
-
-  let cardFood;
-
-  // creation des cards
-    data.forEach(food => {
+// fonction creation des cards
+function createContentCard(donnee, cardFood, container){
+  donnee.forEach(food => {
     cardFood = document.createElement("div");
     cardFood.classList.add("col-9");
     cardFood.classList.add("col-md-6");
@@ -29,7 +17,7 @@ async function appelData() {
                 <div class="card mb-3" style="max-width: 540px; min-width: 198px;">
                   <div class="row g-0">
                     <div class="col-md-2">
-                      <img src= ${food.image} class="img-fluid rounded-start" alt="burger charolais">
+                      <img src= ${food.image} class="img-fluid rounded-start" alt=${food.name}>
                     </div>
                     <div class="col-md-10">
                       <div class="card-body">
@@ -46,14 +34,29 @@ async function appelData() {
               </div>
   
     `
-    containerPlat.appendChild(cardFood);
+    container.appendChild(cardFood);
   
   })
 
+}
+
+
+// Appelle data 
+
+window.addEventListener("load", appelData);
+input.addEventListener("input", appelData);
+
+async function appelData() {
+  const response = await fetch("./data.json");
+  const data = await response.json();
+
+  let cardFood;
+
+  // creation des cards
+  createContentCard(data, cardFood, containerPlat);
   createFuse(data, cardFood);
     
 };
-
 
 
 
@@ -78,41 +81,10 @@ function createFuse(data, cardFood){
     containerPlat.innerHTML="";
   
     // création des cards
-    matchLocal.forEach(namePlat => {
-      cardFood = document.createElement("div");
-      cardFood.classList.add("col-9");
-      cardFood.classList.add("col-md-6");
-      cardFood.classList.add("col-lg-3");
-      cardFood.classList.add("food-card");
-      cardFood.setAttribute("data-key", namePlat.categorie.toLocaleLowerCase() + " " + namePlat.name.toLocaleLowerCase());
-      
-      cardFood.innerHTML = `
-                  <div class="card mb-3" style="max-width: 540px;min-width: 198px;">
-                    <div class="row g-0">
-                      <div class="col-md-2">
-                        <img src= ${namePlat.image} class="img-fluid rounded-start" alt="burger charolais">
-                      </div>
-                      <div class="col-md-10">
-                        <div class="card-body">
-                          <div class="d-flex align-items-baseline justify-content-between align-self-end">
-                            <p class="card-text"><small class="text-body-secondary">${namePlat.prix} €</small></p>
-                            <div class="btn small border-warning text-dark border-warning text-dark">add <i class="bi bi-plus"></i></div>
-                          </div>
-                          <h5 class="card-title">${namePlat.name}</h5>
-                          <p class="card-text">${namePlat.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-    
-      `
-      containerPlat.appendChild(cardFood);
+    createContentCard(matchLocal, cardFood, containerPlat);
 
-      //nettoie le localStorage
-      localStorage.removeItem("categorie");
-  
-  });
+    //nettoie le localStorage
+    localStorage.removeItem("categorie");
     return;
   }
 
@@ -132,83 +104,12 @@ function createFuse(data, cardFood){
   if (input.value < 1) {
     containerPlat.innerHTML="";
   // creation des cards
-  data.forEach(food => {
-    cardFood = document.createElement("div");
-    cardFood.classList.add("col-9");
-    cardFood.classList.add("col-md-6");
-    cardFood.classList.add("col-lg-3");
-    cardFood.classList.add("food-card");
-    cardFood.setAttribute("data-key", food.categorie + " " + food.name);
-    
-    cardFood.innerHTML = `
-                <div class="card mb-3" style="max-width: 540px; min-width: 198px;">
-                  <div class="row g-0">
-                    <div class="col-md-2">
-                      <img src= ${food.image} class="img-fluid rounded-start" alt="burger charolais">
-                    </div>
-                    <div class="col-md-10">
-                      <div class="card-body">
-                        <div class="d-flex align-items-baseline justify-content-between align-self-end">
-                          <p class="card-text"><small class="text-body-secondary">${food.prix} €</small></p>
-                          <div class="btn small border-warning text-dark border-warning text-dark">add <i class="bi bi-plus"></i></div>
-                        </div>
-                        <h5 class="card-title">${food.name}</h5>
-                        <p class="card-text">${food.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-    `
-    containerPlat.appendChild(cardFood);
-  
-  })
-    
-    
+  createContentCard(data, cardFood, containerPlat);    
   }
 
 
   // création des cards
-  namePlatResults.forEach(namePlat => {
-    // console.log(namePlat);
-
-    cardFood = document.createElement("div");
-    cardFood.classList.add("col-9");
-    cardFood.classList.add("col-md-6");
-    cardFood.classList.add("col-lg-3");
-    cardFood.classList.add("food-card");
-    cardFood.setAttribute("data-key", namePlat.categorie.toLocaleLowerCase() + " " + namePlat.name.toLocaleLowerCase());
-    
-    cardFood.innerHTML = `
-                <div class="card mb-3" style="max-width: 540px;min-width: 198px;">
-                  <div class="row g-0">
-                    <div class="col-md-2">
-                      <img src= ${namePlat.image} class="img-fluid rounded-start" alt="burger charolais">
-                    </div>
-                    <div class="col-md-10">
-                      <div class="card-body">
-                        <div class="d-flex align-items-baseline justify-content-between align-self-end">
-                          <p class="card-text"><small class="text-body-secondary">${namePlat.prix} €</small></p>
-                          <div class="btn small border-warning text-dark border-warning text-dark">add <i class="bi bi-plus"></i></div>
-                        </div>
-                        <h5 class="card-title">${namePlat.name}</h5>
-                        <p class="card-text">${namePlat.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-    `
-    containerPlat.appendChild(cardFood);
-
-});
+  createContentCard(namePlatResults, cardFood, containerPlat);
 
 
 }
-
-
-
-// https://alexandre.alapetite.fr/doc-alex/alx_special.html
-

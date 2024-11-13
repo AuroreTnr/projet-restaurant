@@ -1,3 +1,4 @@
+// Validation bootstrap
 (() => {
     'use strict'
   
@@ -14,3 +15,4 @@
       }, false)
     })
   })()
+

@@ -7,39 +7,41 @@ const input = document.querySelector(".search-input");
 input.addEventListener("input", appelData)
 
 async function appelData() {
-    const response = await fetch("./data.json");
-    const data = await response.json();
-  
-  
-    createFuse(data);
-      
+  const response = await fetch("./data.json");
+  const data = await response.json();
+
+
+  createFuse(data);
+
 };
-  
+
 // Instanciation de fuse.js
 
-function createFuse(data){
+function createFuse(data) {
 
-    containerPlat.innerHTML ="";
+  // nettoie
+  containerPlat.innerHTML = "";
 
-    // instanciation de fuse
-    const fuse = new Fuse(data, {keys : ["name", "categorie"]});
+  // instanciation de fuse
+  const fuse = new Fuse(data, { keys: ["name", "categorie"] });
 
-    // Renvoie un array Filtre basé sur la valeur entrée dans l' input
-    const result = fuse.search(input.value);
-    // recuperation de nos items
-    const platResult = result.map(result => result.item);
-
+  // Renvoie un array Filtre basé sur la valeur entrée dans l' input
+  const result = fuse.search(input.value);
   
-    // creation des cards
-      platResult.forEach(food => {
-      let cardFood = document.createElement("div");
-      cardFood.classList.add("col-9");
-      cardFood.classList.add("col-md-6");
-      cardFood.classList.add("col-lg-3");
-      cardFood.classList.add("food-card");
-      cardFood.setAttribute("data-key", food.categorie + " " + food.name);
-      
-      cardFood.innerHTML = `
+  // recuperation de nos items
+  const platResult = result.map(result => result.item);
+
+
+  // creation des cards
+  platResult.forEach(food => {
+    let cardFood = document.createElement("div");
+    cardFood.classList.add("col-9");
+    cardFood.classList.add("col-md-6");
+    cardFood.classList.add("col-lg-3");
+    cardFood.classList.add("food-card");
+    cardFood.setAttribute("data-key", food.categorie + " " + food.name);
+
+    cardFood.innerHTML = `
                   <div class="card mb-3" style="max-width: 540px; min-width: 198px;">
                     <div class="row g-0">
                       <div class="col-md-2">
@@ -60,14 +62,14 @@ function createFuse(data){
                 </div>
     
       `
-      containerPlat.appendChild(cardFood);
-    
-    })
+    containerPlat.appendChild(cardFood);
 
-    
+  })
+
+
 }
 
-  
+
 
 
 
