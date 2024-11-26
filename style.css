@@ -183,6 +183,11 @@ header span {
     font-size: 12px;
     background: var(--accent-color);
 }
+ .container-footer a{
+    color: var(--white-color);
+    font-size: 15px;
+    margin-right: 5px;
+ }
 
 
 

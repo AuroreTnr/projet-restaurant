@@ -23,7 +23,7 @@ function createContentCard(donnee, cardFood, container){
                       <div class="card-body">
                         <div class="d-flex align-items-baseline justify-content-between align-self-end">
                           <p class="card-text"><small class="text-body-secondary">${food.prix} €</small></p>
-                          <div class="btn small border-warning text-dark border-warning text-dark">add <i class="bi bi-plus"></i></div>
+                          <div class="btn small border-warning text-dark border-warning text-dark" id="${food.id}">add <i class="bi bi-plus"></i></div>
                         </div>
                         <h5 class="card-title">${food.name}</h5>
                         <p class="card-text">${food.description}</p>
@@ -35,7 +35,6 @@ function createContentCard(donnee, cardFood, container){
   
     `
     container.appendChild(cardFood);
-  
   })
 
 }
@@ -49,6 +48,7 @@ input.addEventListener("input", appelData);
 async function appelData() {
   const response = await fetch("./data.json");
   const data = await response.json();
+  
 
   let cardFood;
 
@@ -113,3 +113,6 @@ function createFuse(data, cardFood){
 
 
 }
+
+
+

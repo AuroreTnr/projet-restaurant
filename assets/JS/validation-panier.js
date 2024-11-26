@@ -6,18 +6,18 @@ const btnSubmit = document.querySelector(".btn-submit");
 const errorMsgNom = document.querySelector(".errorMsg-nom");
 const errorMsgPrenom = document.querySelector(".errorMsg-prenom");
 const errorMsgAdresse = document.querySelector(".errorMsg-adresse");
-const errorMsgchekbox = document.querySelector(".errorMsg-checkbox");
+const errorMsgPostal = document.querySelector(".errorMsg-postal");
 const allErrorMsg = document.querySelectorAll(".errorMsg");
 
 // Sélectionner les inputs
 const nom = document.querySelector("#name");
 const prenom = document.querySelector("#prenom");
-const adresseEmail = document.querySelector("#email");
-const checkbox = document.querySelector("#checkbox");
+const adresse = document.querySelector("#adresse");
+const postal = document.querySelector("#postal");
 
 // REGEX pour validation des champs
 const charValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
-const emailValid = /^[a-z0-9.-]+@[a-z0-9.-]{2,}\.[a-z]{2,4}$/;
+const postalValid = /^[1-9]{5}$/;
 
 form.addEventListener('submit', handleSubmit);
 
@@ -43,22 +43,24 @@ function handleSubmit(e) {
     errorMsgPrenom.textContent = "Format incorrect";
   }
 
-  // Validation pour l'email
-  if (adresseEmail.validity.valueMissing) {
+  // Validation pour le adresse
+  if (adresse.validity.valueMissing) {
     e.preventDefault();
-    errorMsgAdresse.textContent = "Entrez votre adresse email";
-  } else if (!emailValid.test(adresseEmail.value)) {
+    errorMsgAdresse.textContent = "Entrez votre adresse";
+  } else if (!charValid.test(adresse.value)) {
     e.preventDefault();
     errorMsgAdresse.textContent = "Format incorrect";
   }
 
-  // Validation de la case à cocher
-  if (!checkbox.checked) {
+  // Validation pour le postal
+  if (postal.validity.valueMissing) {
     e.preventDefault();
-    errorMsgchekbox.style.color="red";
-  }else{
-    errorMsgchekbox.style.color="green";
+    errorMsgPostal.textContent = " Entrez votre code postal";
+  } else if (!postalValid.test(postal.value)) {
+    e.preventDefault();
+    errorMsgPostal.textContent = " Il doit contenir 5 chiffres";
   }
+
 }
 
 
