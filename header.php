@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plat</title>
+  <title>Restaurant the district</title>
   <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
   <!-- BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,11 +22,11 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="./assets/css/plat.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body class="bg-dark">
+<body>
 
 
 
@@ -54,16 +54,16 @@
           <div class="offcanvas-body d-flex justify-content-center">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link text-uppercase" aria-current="page" href="/accueil.html">Accueil</a>
+                <a class="nav-link text-uppercase" aria-current="page" href="/index.php">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-uppercase" href="/categorie.html">catégorie</a>
+                <a class="nav-link text-uppercase" href="/categorie.php">catégorie</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-uppercase link-plats" href="/plats.html">plats</a>
+                <a class="nav-link text-uppercase link-plats" href="/plats.php">plats</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-uppercase" href="/contact.html">contact</a>
+                <a class="nav-link text-uppercase" href="/contact.php">contact</a>
               </li>
             </ul>
           </div>
@@ -73,18 +73,27 @@
 
     <!-- BANNIERE -->
     <div class="container-items position-relative d-flex justify-content-center align-items-center">
-      <img src="assets/img/bg3.jpeg" class="card-img position-relative"
+      <img src="assets/img/banniere_1920.jpg" class="card-img position-relative"
         alt="jeune femme dégustant son repas au restaurant le district">
       <div class="text-banniere position-absolute">
-        <h5 class="card-title text-white text-center">Plat</h5>
-        <div class="input-group input-group-sm">
+        <h5 class="card-title text-white">Restaurant le district</h5>
+        <p class="card-text text-white">“Bien manger, un plaisir à partager ”</p>
+        <div class="input-group input-group-sm mb-3">
           <input type="text" class="form-control search-input" aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-sm" placeholder="Entrez votre recherche">
           <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-search"></i>
           </span>
         </div>
-        <div class="container-suggestion bg-white text-secondary rounded position-absolute"
-          style="width: 100%;cursor: pointer;"></div>
+      </div>
+    </div>
+
+
+
+    <!-- Container search plat -->
+    <div class="container-fluid p-4">
+      <div class="row align-items-center justify-content-center container-plat-search">
+
+
       </div>
     </div>
 
@@ -112,63 +121,4 @@
   </header>
 
 
-
-
   <main>
-
-    <!-- PLAT -->
-    <section>
-
-      <div class="container-fluid p-4">
-        <div class="row align-items-center justify-content-center container-plat">
-
-
-        </div>
-      </div>
-    </section>
-
-
-
-
-  </main>
-
-
-
-  <footer>
-    <div class="container-footer d-flex flex-column gap-4 p-4 text-light">
-      <div class="d-flex gap-3">
-        <div>
-          <span class="d-block fw-bold">Contacter nous</span>
-          <span class="d-block"><i class="bi bi-geo-alt-fill me-1"></i>Lorem ipsum dolor sit, amet</span>
-          <span class="d-block"><i class="bi bi-telephone-fill me-1"></i>03 23 51 25 12</span>
-          <span class="d-block"><i class="bi bi-envelope-at me-1"></i>the-district@gmail.fr</span>
-          <span class="d-block"><i class="bi bi-clock me-1"></i>Sun - Sat / 10:00 AM - 8:00 PM</span>
-        </div>
-
-        <div>
-          <span class="d-block fw-bold">The district</span>
-          <a href="#"><i class="bi bi-instagram me-1"></i></a>
-          <a href="#"><i class="bi bi-facebook me-1"></i></a>
-          <a href="#"><i class="bi bi-twitter-x me-1"></i></a>
-
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-
-
-  <!-- cdn bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
-  <!-- Fuse.js (permet une correespondance floue des recherche utilisateur) -->
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-
-
-  <script src="./assets/JS/script-plat.js" type="module"></script>
-</body>
-
-</html>
