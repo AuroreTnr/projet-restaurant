@@ -69,6 +69,7 @@ main h2 {
     font-size: 20vmin;
     font-family: updock, cursive;
     text-shadow: 3px 2px 1px var(--shadow-color);
+    text-align: center;
 }
 
 

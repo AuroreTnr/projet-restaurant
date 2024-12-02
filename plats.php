@@ -29,7 +29,7 @@ require 'data.php';
                     <div class="col-md-10">
                       <div class="card-body">
                         <div class="d-flex align-items-baseline justify-content-between align-self-end">
-                          <p class="card-text"><small class="text-body-secondary"><?= $food['prix']; ?></small></p>
+                          <p class="card-text"><small class="text-body-secondary"><?= $food['prix'] . ' '. '€'; ?></small></p>
                           <div class="btn small border-warning text-dark border-warning text-dark">add <i
                               class="bi bi-plus"></i></div>
                         </div>

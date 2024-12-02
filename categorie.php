@@ -23,7 +23,7 @@ require 'data.php';
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title"><?= $key; ?></h5>
+                      <h5 class="card-title fs-6"><?= $key; ?></h5>
                       <p class="card-text">Lorem ipsum dolor sit amet.</p>
                       <a href="./plats.php" class="stretched-link" data-key=<?= $key; ?>></a>
 

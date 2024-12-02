@@ -31,6 +31,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 main h2 {
@@ -72,12 +73,14 @@ main h2 {
     font-size: 10vmin;
     font-family: updock, cursive;
     text-shadow: 3px 2px 1px var(--shadow-color);
+    text-align: center;
 }
 
 .text-banniere p{
     font-size: 5vmin;
     font-family: updock, cursive;
     text-shadow: 3px 2px 1px var(--shadow-color);
+    text-align: center;
 }
 
 /* ------------------------------------------------------------------ */
@@ -122,49 +125,16 @@ header span {
 
 /* ---------------------------------------------------- */
 
-/* TITLE VEDETTE */
+/* FEATURETTE */
 
 
-.container-stars{
-    margin: 0 auto;
-    animation: shake .8s alternate infinite;
-}
-
-.container-stars h2{
-    text-decoration: underline;
-    text-underline-offset: 7px;
-}
-
-
-/* ANIMATION STARS */
-
-@keyframes shake {
-    0% {
-        opacity: 0.4;
-    }
-    100% {
-        opacity: 1;
-    }
+.carousel img{
+    height: 350px;
+    object-fit: cover;
 }
 
 
 /* ------------------------------------------ */
-/* CAROUSEL */
-.carousel {
-    max-width: 550px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-}
-
-
-
-
-/* BLOCK AVIS */
-.container-avis {
-    max-width: 350px;
-    font-size: 13px;
-    color: var(--white-color);
-}
 
 
 
