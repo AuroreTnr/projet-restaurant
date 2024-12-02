@@ -7,7 +7,7 @@ require 'header.php';
 
 
   <div class="container my-5 formulaire text-light">
-    <form class="row g-3 justify-content-center" novalidate action="donnees-panier" method="POST" id="formulaire-panier">
+    <form class="row g-3 justify-content-center" novalidate action="donnees-panier.php" method="POST" id="formulaire-panier">
       <div class="col-md-7">
         <label for="validationCustom01" class="form-label">Entrez votre nom : * <span
             class="errorMsg errorMsg-nom text-danger"></span></label>
@@ -39,14 +39,4 @@ require 'header.php';
     </form>
   </div>
 
-  <!-- cdn bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
-  <script src="./assets/JS/validation-panier.js"></script>
-
-
-</body>
-
-</html>
+ <?php require 'footer.php'; ?>

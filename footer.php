@@ -5,8 +5,10 @@
 <footer>
   <div class="container-footer d-flex flex-column gap-4 p-4 text-light">
     <!-- VIDEO -->
-    <video src="assets/video/video_medium.mp4" class="video rounded-top object-fit-cover border-bottom" muted autoplay
-      loop></video>
+    <?php if ($_SERVER['SCRIPT_NAME'] === "/index.php"): ?>
+      <video src="assets/video/video_medium.mp4" class="video rounded-top object-fit-cover border-bottom" muted autoplay loop></video>
+    <?php endif; ?>
+
     <div class="d-flex gap-3">
       <div>
         <span class="d-block fw-bold">Contacter nous</span>

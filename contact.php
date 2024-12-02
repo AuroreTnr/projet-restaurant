@@ -6,28 +6,28 @@ require 'header.php';
 ?>
 
   <div class="container my-5 formulaire">
-    <form class="row g-3 justify-content-center text-light" novalidate action="donnees-contact" method="POST" id="formulaire-contact">
+    <form class="row g-3 justify-content-center text-light" novalidate action="donnees-contact.php" method="POST" id="formulaire-contact">
       <div class="col-md-7">
         <label for="validationCustom01" class="form-label">Entrez votre nom : * <span
             class="errorMsg errorMsg-nom text-danger"></span></label>
-        <input type="text" class="form-control" id="name" required>
+        <input type="text" class="form-control" id="name" name="name" value="<?php echo htmlentities($name);?>" required>
       </div>
 
       <div class="col-md-7">
         <label for="validationCustom02" class="form-label">Entrez votre prénom : * <span
             class="errorMsg errorMsg-prenom text-danger"></span></label>
-        <input type="text" class="form-control" id="prenom" required>
+        <input type="text" class="form-control" id="prenom" name="prenom" value="<?php echo htmlentities($prenom);?>" required>
       </div>
 
       <div class="col-md-7">
         <label for="validationCustom03" class="form-label">Entrez votre adresse mail: * <span
             class="errorMsg errorMsg-adresse text-danger"></span></label>
-        <input type="email" class="form-control" id="email" required>
+        <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlentities($email);?>" required>
       </div>
 
       <div class="col-md-7">
         <div class="form-check">
-          <input type="checkbox" value="" id="checkbox" required>
+          <input type="checkbox" id="checkbox" name="checkbox" required>
           <label for="invalidCheck1" class="errorMsg-checkbox">
             Veuillez accepter les conditions d' utilisation. *
           </label>
@@ -35,8 +35,8 @@ require 'header.php';
       </div>
 
       <div class="col-md-7 mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Votre message :</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="exampleFormControlTextarea1" class="form-label" value="<?php echo htmlentities($commentaire); ?>">Votre message :</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" name="commentaire" rows="3"></textarea>
       </div>
 
 
@@ -47,14 +47,4 @@ require 'header.php';
     </form>
   </div>
 
-  <!-- cdn bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
-  <script src="./assets/JS/validationform.js"></script>
-
-
-</body>
-
-</html>
+<?php require 'footer.php' ; ?>
