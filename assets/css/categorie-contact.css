@@ -123,8 +123,16 @@ header span {
 
 /* ------------------------------------------ */
 
-/* FOOTER CONTACT */
+/* VIDEO */
 
+.video {
+    width: 100%;
+    height: 250px;
+    object-position: bottom;
+    filter:grayscale();
+}
+
+/* FOOTER CONTACT */
 
 .container-footer {
     font-size: 12px;
@@ -135,4 +143,5 @@ header span {
     font-size: 15px;
     margin-right: 5px;
  }
+
 

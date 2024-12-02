@@ -1,4 +1,9 @@
-<?php require 'header.php' ?>
+<?php 
+$title = "Plats";
+$baniereTitle = "Plats";
+$baniereImage = "assets/img/bg3.jpeg";
+require 'header.php';
+?>
 
     <!-- PLAT -->
     <section>

@@ -34,8 +34,25 @@
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
   crossorigin="anonymous"></script>
 
-<script src="script.js" type="module"></script>
-<script src="./assets/JS/script-plat.jsscript-plat.js"></script>
+<?php
+    if ($_SERVER["SCRIPT_NAME"] === "/index.php") {
+      echo '<script src="/script.js"></script>';
+    }
+    elseif ($_SERVER["SCRIPT_NAME"] === "/categorie.php") {
+      echo '<script src="/assets/JS/script-categorie.js"></script>';
+    }
+    elseif ($_SERVER["SCRIPT_NAME"] === "/contact.php") {
+      echo '<script src="/assets/JS/validationform.js"></script>';
+    }
+    elseif ($_SERVER["SCRIPT_NAME"] === "/plats.php") {
+      echo '<script src="/assets/JS/script-plat.js"></script>';
+    }
+    elseif ($_SERVER["SCRIPT_NAME"] === "/panier.php") {
+      echo '<script src="/assets/JS/validation-panier.js"></script>';
+    }
+?>
+
+
 
 <!-- Fuse.js (permet une correespondance floue des recherche utilisateur) -->
 <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>

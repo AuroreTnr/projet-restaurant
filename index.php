@@ -1,4 +1,10 @@
-<?php require 'header.php' ?>
+<?php 
+$title = "Restaurant the district";
+$baniereTitle = "Restaurant le district";
+$baniereSubtitle = "“Bien manger, un plaisir à partager ”";
+$baniereImage = "assets/img/banniere_1920.jpg";
+require 'header.php';
+?>
 
     <!-- PLAT -->
     <section>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant the district</title>
+  <title><?= $title ?></title>
   <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
   <!-- BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,7 +22,18 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+    <!-- link CSS -->
+     <?php
+      if ($_SERVER["SCRIPT_NAME"] === "/index.php") {
+        echo "<link rel='stylesheet' href='style.css'>";
+      }
+      elseif ($_SERVER["SCRIPT_NAME"] === "/categorie.php" || $_SERVER["SCRIPT_NAME"] === "/contact.php" || $_SERVER["SCRIPT_NAME"] === "/panier.php") {
+        echo '<link rel="stylesheet" href="/assets/css/categorie-contact.css">';
+      }
+      elseif ($_SERVER["SCRIPT_NAME"] === "/plats.php") {
+        echo '<link rel="stylesheet" href="/assets/css/plat.css">';
+      }
+     ?>
 
 </head>
 
@@ -39,11 +50,11 @@
           data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <i class="btn-burger bi bi-three-dots-vertical"></i>
         </button>
-        <a href="/accueil.html" class="me-auto"><img src="assets/img/logo_transparent.png" class="logo"
+        <a href="/accueil.php" class="me-auto"><img src="assets/img/logo_transparent.png" class="logo"
             alt="logo le district"></a>
 
-        <a href="/panier.html" class="d-md-flex order-md-5"><i class="bi bi-cart panier"></i></a>
-        <a href="/user-account.html" class="d-md-flex order-md-5"><i class="bi bi-person-circle account"></i></a>
+        <a href="/panier.php" class="d-md-flex order-md-5"><i class="bi bi-cart panier"></i></a>
+        <a href="/user-account.php" class="d-md-flex order-md-5"><i class="bi bi-person-circle account"></i></a>
 
         <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel">
@@ -71,23 +82,32 @@
       </div>
     </nav>
 
-    <!-- BANNIERE -->
-    <div class="container-items position-relative d-flex justify-content-center align-items-center">
-      <img src="assets/img/banniere_1920.jpg" class="card-img position-relative"
-        alt="jeune femme dégustant son repas au restaurant le district">
-      <div class="text-banniere position-absolute">
-        <h5 class="card-title text-white">Restaurant le district</h5>
-        <p class="card-text text-white">“Bien manger, un plaisir à partager ”</p>
-        <div class="input-group input-group-sm mb-3">
-          <input type="text" class="form-control search-input" aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-sm" placeholder="Entrez votre recherche">
-          <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-search"></i>
-          </span>
-        </div>
+<!-- BANNIERE -->
+<div class="container-items position-relative d-flex justify-content-center align-items-center">
+  <img class="card-img position-relative"
+    <?php if ($_SERVER["SCRIPT_NAME"] === "/index.php" || $_SERVER["SCRIPT_NAME"] === "/plats.php"  || $_SERVER["SCRIPT NAME"] === "/panier.php" ): ?>
+        src="<?= $baniereImage; ?>"
+        alt="jeune femme dégustant son repas au restaurant le district"
+    <?php else: ?>
+        src="<?= $baniereImage; ?>"
+        alt="photo de légumes savoureux"
+    <?php endif; ?>
+  />
+
+  <div class="text-banniere position-absolute">
+    <h5 class="card-title text-white"><?= $baniereTitle ?></h5>
+    <p class="card-text text-white"><?= $baniereSubtitle ?></p>
+
+    <!-- Condition affichage search -->
+    <?php if ($_SERVER["SCRIPT_NAME"] === "/index.php" || $_SERVER["SCRIPT_NAME"] === "/plats.php"): ?>
+      <div class="input-group input-group-sm mb-3">
+        <input type="text" class="form-control search-input" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-sm" placeholder="Entrez votre recherche">
+        <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-search"></i></span>
       </div>
-    </div>
-
-
+    <?php endif; ?>
+  </div>
+</div>
 
     <!-- Container search plat -->
     <div class="container-fluid p-4">
@@ -100,23 +120,24 @@
 
 
     <!-- QUALITE RESTAURANT -->
-    <div class="container-fluid container-district">
-      <div class="row d-flex justify-content-center text-center text-white p-3">
-        <div class="col-4">
-          <img src="assets/svgs/fish.svg" alt="" class="label-food mb-3">
-          <span class="title d-block">Premium Quality</span>
-        </div>
-        <div class="col-4">
-          <img src="assets/svgs/vegetables.svg" alt="" class="label-food mb-3">
-          <span class="title d-block">Seasonal Vegetables</span>
-        </div>
-        <div class="col-4">
-          <img src="assets/svgs/fruit.svg" alt="" class="label-food mb-3">
-          <span class="title d-block">Fresh Fruit</span>
-        </div>
-
+    <?php if ($_SERVER["SCRIPT_NAME"] === "/index.php" || $_SERVER["SCRIPT_NAME"] === "/plats.php" || $_SERVER["SCRIPT_NAME"] === "/categorie.php"): ?>
+        <div class="container-fluid container-district">
+          <div class="row d-flex justify-content-center text-center text-white p-3">
+              <div class="col-4">
+                <img src="assets/svgs/fish.svg" alt="" class="label-food mb-3">
+                <span class="title d-block">Premium Quality</span>
+              </div>
+              <div class="col-4">
+                <img src="assets/svgs/vegetables.svg" alt="" class="label-food mb-3">
+                <span class="title d-block">Seasonal Vegetables</span>
+              </div>
+              <div class="col-4">
+                <img src="assets/svgs/fruit.svg" alt="" class="label-food mb-3">
+                <span class="title d-block">Fresh Fruit</span>
+              </div>
+          </div>
       </div>
-    </div>
+    <?php endif; ?>
 
   </header>
 

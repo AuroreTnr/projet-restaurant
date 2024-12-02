@@ -1,5 +1,8 @@
-<?php
-require 'headerv2.php';
+<?php 
+$title = "Catégorie";
+$baniereTitle = "Catégorie";
+$baniereImage = "assets/img/bg3.jpeg";
+require 'header.php';
 ?>
 
 
@@ -19,7 +22,7 @@ require 'headerv2.php';
                   <div class="card-body">
                     <h5 class="card-title">Burger</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
-                    <a href="./plats.html" class="stretched-link" data-key="burger"></a>
+                    <a href="./plats.php" class="stretched-link" data-key="burger"></a>
                   </div>
                 </div>
               </div>
@@ -36,7 +39,7 @@ require 'headerv2.php';
                   <div class="card-body">
                     <h5 class="card-title">Pizza</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
-                    <a href="./plats.html" class="stretched-link" data-key="pizza"></a>
+                    <a href="./plats.php" class="stretched-link" data-key="pizza"></a>
 
                   </div>
                 </div>
@@ -54,7 +57,7 @@ require 'headerv2.php';
                   <div class="card-body">
                     <h5 class="card-title">Asiatique</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
-                    <a href="./plats.html" class="stretched-link" data-key="asiatique"></a>
+                    <a href="./plats.php" class="stretched-link" data-key="asiatique"></a>
 
                   </div>
                 </div>
@@ -72,7 +75,7 @@ require 'headerv2.php';
                   <div class="card-body">
                     <h5 class="card-title">Pâte</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
-                    <a href="./plats.html" class="stretched-link" data-key="pate"></a>
+                    <a href="./plats.php" class="stretched-link" data-key="pate"></a>
 
                   </div>
                 </div>
@@ -90,7 +93,7 @@ require 'headerv2.php';
                   <div class="card-body">
                     <h5 class="card-title">Wrap</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
-                    <a href="./plats.html" class="stretched-link" data-key="wrap"></a>
+                    <a href="./plats.php" class="stretched-link" data-key="wrap"></a>
 
                   </div>
                 </div>
@@ -108,7 +111,7 @@ require 'headerv2.php';
                   <div class="card-body">
                     <h5 class="card-title">Veggie</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
-                    <a href="./plats.html" class="stretched-link" data-key="veggie"></a>
+                    <a href="./plats.php" class="stretched-link" data-key="veggie"></a>
 
                   </div>
                 </div>
@@ -126,7 +129,7 @@ require 'headerv2.php';
                   <div class="card-body">
                     <h5 class="card-title">Sandwish</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
-                    <a href="./plats.html" class="stretched-link" data-key="sandwish"></a>
+                    <a href="./plats.php" class="stretched-link" data-key="sandwish"></a>
 
                   </div>
                 </div>
@@ -144,7 +147,7 @@ require 'headerv2.php';
                   <div class="card-body">
                     <h5 class="card-title">Salade</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur</p>
-                    <a href="./plats.html" class="stretched-link" data-key="salade"></a>
+                    <a href="./plats.php" class="stretched-link" data-key="salade"></a>
 
                   </div>
                 </div>
