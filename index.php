@@ -50,13 +50,13 @@ require 'data.php';
     </div>
 
         <div class="carousel-inner">
-          <div class="carousel-item active">
+        <div class="carousel-item active">
           <div class="carousel-caption text-start">
-            <h1>Cuisine Asiatique.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, inventore?.</p>
+            <h1>Cuisine Veggie.</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, aliquid!.</p>
             <p><a class="btn btn-lg btn-dark" href="/plats.php">Plats</a></p>
           </div>
-            <img src="assets/img/food_img/burger/hamburger.jpg" class="d-block w-100" alt="hamburger">
+            <img src="assets/img/food_img/veggie/poelee-du-chef.jpg" class="d-block w-100 img-carousel" alt="cuisine veggie">
           </div>
 
           <div class="carousel-item">
@@ -70,12 +70,13 @@ require 'data.php';
 
           <div class="carousel-item">
           <div class="carousel-caption text-start">
-            <h1>Cuisine Veggie.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, aliquid!.</p>
+            <h1>Cuisine Asiatique.</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, inventore?.</p>
             <p><a class="btn btn-lg btn-dark" href="/plats.php">Plats</a></p>
           </div>
-            <img src="assets/img/food_img/burger/cheesburger.jpg" class="d-block w-100 img-carousel" alt="cheeseburger">
+            <img src="assets/img/food_img/asiatique-food/sushi.jpg" class="d-block w-100" alt="sushi">
           </div>
+
         </div>
       </div>
     </section>

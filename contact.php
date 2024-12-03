@@ -10,19 +10,19 @@ require 'header.php';
       <div class="col-md-7">
         <label for="validationCustom01" class="form-label">Entrez votre nom : * <span
             class="errorMsg errorMsg-nom text-danger"></span></label>
-        <input type="text" class="form-control" id="name" name="name" value="<?php echo htmlentities($name);?>" required>
+        <input type="text" class="form-control" id="name" name="name" value="<?php $name;?>" required>
       </div>
 
       <div class="col-md-7">
         <label for="validationCustom02" class="form-label">Entrez votre prénom : * <span
             class="errorMsg errorMsg-prenom text-danger"></span></label>
-        <input type="text" class="form-control" id="prenom" name="prenom" value="<?php echo htmlentities($prenom);?>" required>
+        <input type="text" class="form-control" id="prenom" name="prenom" value="<?php $prenom;?>" required>
       </div>
 
       <div class="col-md-7">
         <label for="validationCustom03" class="form-label">Entrez votre adresse mail: * <span
             class="errorMsg errorMsg-adresse text-danger"></span></label>
-        <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlentities($email);?>" required>
+        <input type="email" class="form-control" id="email" name="email" value="<?php $email;?>" required>
       </div>
 
       <div class="col-md-7">
@@ -35,16 +35,16 @@ require 'header.php';
       </div>
 
       <div class="col-md-7 mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label" value="<?php echo htmlentities($commentaire); ?>">Votre message :</label>
+        <label for="exampleFormControlTextarea1" class="form-label" value="<?php $commentaire; ?>">Votre message :</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" name="commentaire" rows="3"></textarea>
       </div>
 
 
       <div class="col-md-7">
-        <button class="btn border-warning text-light btn-submit" type="submit">Envoyer</button>
+        <button class="btn border-warning text-light btn-submit" name="btnContact" type="submit">Envoyer</button>
       </div>
 
     </form>
   </div>
 
-<?php require 'footer.php' ; ?>
+  <?php require 'footer'; ?>

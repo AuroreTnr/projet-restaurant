@@ -23,15 +23,13 @@ require 'data.php';
                 <div class="card mb-3" style="max-width: 540px;">
                   <div class="row g-0">
                     <div class="col-md-2">
-                      <img src="<?= $food['image']; ?>" class="img-fluid rounded-start"
-                        alt="<?= $food['name']; ?>">
+                      <img src="<?= $food['image']; ?>" class="img-fluid rounded-start"alt="<?= $food['name']; ?>">
                     </div>
                     <div class="col-md-10">
                       <div class="card-body">
                         <div class="d-flex align-items-baseline justify-content-between align-self-end">
                           <p class="card-text"><small class="text-body-secondary"><?= $food['prix'] . ' '. '€'; ?></small></p>
-                          <div class="btn small border-warning text-dark border-warning text-dark">add <i
-                              class="bi bi-plus"></i></div>
+                          <div class="btn small border-warning text-dark border-warning text-dark">add <i class="bi bi-plus"></i></div>
                         </div>
                         <h5 class="card-title fs-6"><?= $food['name']; ?></h5>
                         <p class="card-text"><?= $food['description']; ?></p>
@@ -44,7 +42,8 @@ require 'data.php';
 
           <?php endforeach ?>
         <?php endforeach ?>
-      
+
+
 
 
 
