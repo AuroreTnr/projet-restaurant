@@ -5,7 +5,7 @@
 <footer>
   <div class="container-footer d-flex flex-column gap-4 p-4 text-light">
     <!-- VIDEO -->
-    <?php if ($_SERVER['SCRIPT_NAME'] === "/index.php"): ?>
+    <?php if ($_SERVER['REQUEST_URI'] === "/index.php"): ?>
       <video src="assets/video/video_medium.mp4" class="video rounded-top object-fit-cover border-bottom" muted autoplay loop></video>
     <?php endif; ?>
 
@@ -37,21 +37,16 @@
   crossorigin="anonymous"></script>
 
 <?php
-    if ($_SERVER["SCRIPT_NAME"] === "/index.php") {
-      echo '<script src="/script.js"></script>';
-    }
-    elseif ($_SERVER["SCRIPT_NAME"] === "/categorie.php") {
-      echo '<script src="/assets/JS/script-categorie.js"></script>';
-    }
-    elseif ($_SERVER["SCRIPT_NAME"] === "/contact.php") {
-      echo '<script src="/assets/JS/validationform.js"></script>';
-    }
-    elseif ($_SERVER["SCRIPT_NAME"] === "/plats.php") {
-      echo '<script src="/assets/JS/script-plat.js"></script>';
-    }
-    elseif ($_SERVER["SCRIPT_NAME"] === "/panier.php") {
-      echo '<script src="/assets/JS/validation-panier.js"></script>';
-    }
+$uri = $_SERVER["REQUEST_URI"];
+echo "<script" . 
+$return_value = match ($uri) {
+   '/index.php' => ' src="/script.js">' ,
+   '/contact.php' => ' src="/assets/JS/validation-contact.js">' ,
+   '/categorie.php' => ' src="/assets/JS/script-categorie.js">' ,
+   '/plats.php' => ' src="/assets/JS/script-plat.js">' ,
+   '/panier.php' => ' src="/assets/JS/validation-panier.js">'
+} . "</script>";
+
 ?>
 
 

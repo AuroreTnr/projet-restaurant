@@ -5,6 +5,7 @@ $baniereImage = "assets/img/bg3.jpeg";
 require 'header.php';
 ?>
 
+
   <div class="container my-5 formulaire">
     <form class="row g-3 justify-content-center text-light" novalidate action="donnees-contact.php" method="POST" id="formulaire-contact">
       <div class="col-md-7">
@@ -47,4 +48,4 @@ require 'header.php';
     </form>
   </div>
 
-  <?php require 'footer'; ?>
+  <?php require 'footer.php'; ?>

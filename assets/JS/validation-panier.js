@@ -1,3 +1,5 @@
+console.log("hello");
+
 // Sélectionner le formulaire et le bouton
 const form = document.querySelector(".formulaire");
 const btnSubmit = document.querySelector(".btn-submit");
@@ -17,7 +19,8 @@ const postal = document.querySelector("#postal");
 
 // REGEX pour validation des champs
 const charValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
-const postalValid = /^[1-9]{5}$/;
+const adresseValid = /^[0-9]+[\s][a-zA-ZéèîïÉÈÎÏ]+([\s][a-zA-ZéèîïÉÈÎÏ]+)*([-'\s][a-zA-ZéèîïÉÈÎÏ]+([\s][a-zéèêàçîï ]+)*)?$/;
+const postalValid = /^[0-9]{5}$/;
 
 form.addEventListener('submit', handleSubmit);
 
@@ -44,13 +47,13 @@ function handleSubmit(e) {
   }
 
   // Validation pour le adresse
-  // if (adresse.validity.valueMissing) {
-  //   e.preventDefault();
-  //   errorMsgAdresse.textContent = "Entrez votre adresse";
-  // } else if (!adresseValid.test(adresse.value)) {
-  //   e.preventDefault();
-  //   errorMsgAdresse.textContent = "Format incorrect";
-  // }
+  if (adresse.validity.valueMissing) {
+    e.preventDefault();
+    errorMsgAdresse.textContent = "Entrez votre adresse";
+  } else if (!adresseValid.test(adresse.value)) {
+    e.preventDefault();
+    errorMsgAdresse.textContent = "Format incorrect";
+  }
 
   // Validation pour le postal
   if (postal.validity.valueMissing) {

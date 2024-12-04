@@ -1,3 +1,4 @@
+console.log("hello");
 // Sélectionner le formulaire et le bouton
 const form = document.querySelector(".formulaire");
 const btnSubmit = document.querySelector(".btn-submit");
@@ -17,6 +18,8 @@ const checkbox = document.querySelector("#checkbox");
 
 // REGEX pour validation des champs
 const charValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
+const adresseValid = /^[0-9]+[\s][a-zA-ZéèîïÉÈÎÏ]+([\s][a-zA-ZéèîïÉÈÎÏ]+)*([-'\s][a-zA-ZéèîïÉÈÎÏ]+([\s][a-zéèêàçîï ]+)*)?$/;
+const postalValid = /^[0-9]{5}$/;
 const emailValid = /^[a-z0-9.-]+@[a-z0-9.-]{2,}\.[a-z]{2,4}$/;
 
 form.addEventListener('submit', handleSubmit);

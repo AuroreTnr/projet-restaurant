@@ -1,3 +1,5 @@
+console.log("hello");
+
 const input = document.querySelector(".search-input");
 const listItem = document.querySelectorAll(".food-card");
 const containerPlat = document.querySelector(".container-plat");

@@ -23,22 +23,20 @@
     rel="stylesheet">
 
     <!-- link CSS -->
-     <?php
-      if ($_SERVER["SCRIPT_NAME"] === "/index.php") {
-        echo "<link rel='stylesheet' href='style.css'>";
-      }
-      elseif ($_SERVER["SCRIPT_NAME"] === "/categorie.php" || $_SERVER["SCRIPT_NAME"] === "/contact.php" || $_SERVER["SCRIPT_NAME"] === "/panier.php") {
-        echo '<link rel="stylesheet" href="/assets/css/categorie-contact.css">';
-      }
-      elseif ($_SERVER["SCRIPT_NAME"] === "/plats.php") {
-        echo '<link rel="stylesheet" href="/assets/css/plat.css">';
-      }
-     ?>
+    <?php
+      $uri = $_SERVER["REQUEST_URI"];
+
+      echo "<link" . 
+      $return_value = match ($uri) {
+        '/index.php' => ' rel="stylesheet" href="style.css">' ,
+        '/categorie.php','/contact.php','/panier.php' => ' rel="stylesheet" href="/assets/css/categorie-contact.css">' ,
+        '/plats.php' => ' rel="stylesheet" href="/assets/css/plat.css">' ,
+      };
+    ?>
 
 </head>
 
 <body>
-
 
 
   <!-- NAV HEADER -->
@@ -50,9 +48,7 @@
           data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <i class="btn-burger bi bi-three-dots-vertical"></i>
         </button>
-        <a href="/accueil.php" class="me-auto"><img src="assets/img/logo_transparent.png" class="logo"
-            alt="logo le district"></a>
-
+        <a href="/accueil.php" class="me-auto"><img src="assets/img/logo_transparent.png" class="logo"alt="logo le district"></a>
         <a href="/panier.php" class="d-md-flex order-md-5"><i class="bi bi-cart panier"></i></a>
         <a href="/user-account.php" class="d-md-flex order-md-5"><i class="bi bi-person-circle account"></i></a>
 
@@ -85,7 +81,7 @@
 <!-- BANNIERE -->
 <div class="container-items position-relative d-flex justify-content-center align-items-center">
   <img class="card-img position-relative"
-    <?php if ($_SERVER["SCRIPT_NAME"] === "/index.php" || $_SERVER["SCRIPT_NAME"] === "/plats.php"  || $_SERVER["SCRIPT NAME"] === "/panier.php" ): ?>
+    <?php if ($_SERVER["REQUEST_URI"] === "/index.php" || $_SERVER["REQUEST_URI"] === "/plats.php"  || $_SERVER["REQUEST_URI"] === "/panier.php" ): ?>
         src="<?= $baniereImage; ?>"
         alt="jeune femme dégustant son repas au restaurant le district"
     <?php else: ?>
@@ -99,11 +95,12 @@
     <p class="card-text text-white"><?= $baniereSubtitle ?></p>
 
     <!-- Condition affichage search -->
-    <?php if ($_SERVER["SCRIPT_NAME"] === "/index.php" || $_SERVER["SCRIPT_NAME"] === "/plats.php"): ?>
+    <?php if ($_SERVER["REQUEST_URI"] === "/index.php" || $_SERVER["REQUEST_URI"] === "/plats.php"): ?>
       <div class="input-group input-group-sm mb-3">
-        <input type="text" class="form-control search-input" aria-label="Sizing example input"
-          aria-describedby="inputGroup-sizing-sm" placeholder="Entrez votre recherche">
-        <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-search"></i></span>
+        <form action="search-page.php" method="get" >
+          <input type="text" name="search" placeholder="rechercher un plat ..." value="" class="p-1">
+          <input type="submit" class="btn btn-light btn-sm text-secondary" value="rechercher"></input>
+        </form>
       </div>
     <?php endif; ?>
   </div>
@@ -120,7 +117,7 @@
 
 
     <!-- QUALITE RESTAURANT -->
-    <?php if ($_SERVER["SCRIPT_NAME"] === "/index.php" || $_SERVER["SCRIPT_NAME"] === "/plats.php" || $_SERVER["SCRIPT_NAME"] === "/categorie.php"): ?>
+    <?php if ($_SERVER["REQUEST_URI"] === "/index.php" || $_SERVER["REQUEST_URI"] === "/plats.php" || $_SERVER["REQUEST_URI"] === "/categorie.php"): ?>
         <div class="container-fluid container-district">
           <div class="row d-flex justify-content-center text-center text-white p-3">
               <div class="col-4">

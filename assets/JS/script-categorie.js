@@ -1,3 +1,5 @@
+console.log("hello");
+
 const cardCategorie = document.querySelectorAll(".card-categorie");
 // console.log(cardCategorie);
 let local = localStorage

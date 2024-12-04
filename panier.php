@@ -5,7 +5,6 @@ $baniereImage = "assets/img/bg3.jpeg";
 require 'header.php';
 ?>
 
-
   <div class="container my-5 formulaire text-light">
     <form class="row g-3 justify-content-center" novalidate action="donnees-panier.php" method="POST" id="formulaire-panier">
       <div class="col-md-7">
