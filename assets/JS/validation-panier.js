@@ -44,13 +44,13 @@ function handleSubmit(e) {
   }
 
   // Validation pour le adresse
-  if (adresse.validity.valueMissing) {
-    e.preventDefault();
-    errorMsgAdresse.textContent = "Entrez votre adresse";
-  } else if (!charValid.test(adresse.value)) {
-    e.preventDefault();
-    errorMsgAdresse.textContent = "Format incorrect";
-  }
+  // if (adresse.validity.valueMissing) {
+  //   e.preventDefault();
+  //   errorMsgAdresse.textContent = "Entrez votre adresse";
+  // } else if (!adresseValid.test(adresse.value)) {
+  //   e.preventDefault();
+  //   errorMsgAdresse.textContent = "Format incorrect";
+  // }
 
   // Validation pour le postal
   if (postal.validity.valueMissing) {
