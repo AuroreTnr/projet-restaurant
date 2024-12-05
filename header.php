@@ -48,7 +48,7 @@
           data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <i class="btn-burger bi bi-three-dots-vertical"></i>
         </button>
-        <a href="/accueil.php" class="me-auto"><img src="assets/img/logo_transparent.png" class="logo"alt="logo le district"></a>
+        <a href="/accueil.php" class="me-auto"><img src="assets/img/logo_transparent.png" class="logo" alt="logo le district"></a>
         <a href="/panier.php" class="d-md-flex order-md-5"><i class="bi bi-cart panier"></i></a>
         <a href="/user-account.php" class="d-md-flex order-md-5"><i class="bi bi-person-circle account"></i></a>
 
@@ -88,7 +88,7 @@
         src="<?= $baniereImage; ?>"
         alt="photo de légumes savoureux"
     <?php endif; ?>
-  />
+  >
 
   <div class="text-banniere position-absolute">
     <h5 class="card-title text-white"><?= $baniereTitle ?></h5>
@@ -99,7 +99,7 @@
       <div class="input-group input-group-sm mb-3">
         <form action="search-page.php" method="get" >
           <input type="text" name="search" placeholder="rechercher un plat ..." value="" class="p-1">
-          <input type="submit" class="btn btn-light btn-sm text-secondary" value="rechercher"></input>
+          <input type="submit" class="btn btn-light btn-sm text-secondary" value="rechercher">
         </form>
       </div>
     <?php endif; ?>

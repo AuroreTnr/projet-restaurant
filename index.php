@@ -38,21 +38,19 @@ require 'data.php';
         </div>
       </div>
 
-  <section>
-
 
       <!-- CAROUSEL -->
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
 
-        <div class="carousel-inner">
+      <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="carousel-caption text-start">
-            <h1>Cuisine Veggie.</h1>
+            <h2>Cuisine Veggie.</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, aliquid!.</p>
             <p><a class="btn btn-lg btn-dark" href="/plats.php">Plats</a></p>
           </div>
@@ -61,7 +59,7 @@ require 'data.php';
 
           <div class="carousel-item">
           <div class="carousel-caption text-start">
-            <h1>Cuisine Italienne.</h1>
+            <h2>Cuisine Italienne.</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, culpa!.</p>
             <p><a class="btn btn-lg btn-dark" href="/plats.php">Plats</a></p>
           </div>
@@ -70,7 +68,7 @@ require 'data.php';
 
           <div class="carousel-item">
           <div class="carousel-caption text-start">
-            <h1>Cuisine Asiatique.</h1>
+            <h2>Cuisine Asiatique.</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, inventore?.</p>
             <p><a class="btn btn-lg btn-dark" href="/plats.php">Plats</a></p>
           </div>
@@ -79,8 +77,8 @@ require 'data.php';
 
         </div>
       </div>
-    </section>
 
+  </section>
 
 
 <?php require 'footer.php' ?>
