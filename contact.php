@@ -7,7 +7,7 @@ require 'header.php';
 
 
   <div class="container my-5 formulaire">
-    <form class="row g-3 justify-content-center text-light" novalidate action="donnees-contact.php" method="POST" id="formulaire-contact">
+    <form class="row g-3 justify-content-center text-light" novalidate action="/contact.php" method="POST" id="formulaire-contact">
       <div class="col-md-7">
         <label for="validationCustom01" class="form-label">Entrez votre nom : * <span
             class="errorMsg errorMsg-nom text-danger"></span></label>
