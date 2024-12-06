@@ -24,7 +24,7 @@ if (!empty($_POST['name'] && $_POST['prenom'] && $_POST['adresse'] && $_POST['po
   $postal = $_POST['postal'];
 
     if (preg_match($regexChar, $name) && preg_match($regexChar, $prenom) && preg_match($regexAdresse, $adresse) && preg_match($regexPostal, $postal)){
-      $file = __DIR__ . DIRECTORY_SEPARATOR . 'commandes' . DIRECTORY_SEPARATOR . 'commande du client ' . $name . ' le : ' . date('d-m-y') . '.txt';
+      $file = __DIR__ . DIRECTORY_SEPARATOR . 'commandes' . DIRECTORY_SEPARATOR . 'commande-du-client-' . $name . "-" . $prenom . '-le-' . date('d-m-y') . '.txt';
 
       file_put_contents($file, 'Nom : '. $name . PHP_EOL, FILE_APPEND);
       $name = null;
@@ -71,25 +71,25 @@ if (!empty($_POST['name'] && $_POST['prenom'] && $_POST['adresse'] && $_POST['po
 
     <form class="row g-3 justify-content-center" novalidate action="/panier.php" method="POST" id="formulaire-panier">
       <div class="col-md-7">
-        <label for="validationCustom01" class="form-label">Entrez votre nom : * <span
+        <label for="name" class="form-label">Entrez votre nom : * <span
             class="errorMsg errorMsg-nom text-danger"></span></label>
         <input type="text" class="form-control" name="name" id="name" value="<?= htmlentities($name) ?>" required>
       </div>
 
       <div class="col-md-7">
-        <label for="validationCustom02" class="form-label">Entrez votre prénom : * <span
+        <label for="prenom" class="form-label">Entrez votre prénom : * <span
             class="errorMsg errorMsg-prenom text-danger"></span></label>
         <input type="text" class="form-control" name="prenom" id="prenom" value="<?= htmlentities($prenom) ?>" required>
       </div>
 
       <div class="col-md-7">
-        <label for="validationCustom03" class="form-label">Entrez votre adresse : * <span
+        <label for="adresse" class="form-label">Entrez votre adresse : * <span
             class="errorMsg errorMsg-adresse text-danger"></span></label>
         <input type="text" class="form-control" name="adresse" id="adresse" value="<?= htmlentities($adresse) ?>" required>
       </div>
 
       <div class="col-md-7">
-        <label for="validationCustom03" class="form-label">Entrez votre code Postal : *<span
+        <label for="postal" class="form-label">Entrez votre code Postal : *<span
             class="errorMsg errorMsg-postal text-danger"></span></label>
         <input type="number" class="form-control" name="postal" id="postal" value="<?= htmlentities($postal) ?>" required>
       </div>

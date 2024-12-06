@@ -31,6 +31,7 @@
         '/index.php' => ' rel="stylesheet" href="style.css">' ,
         '/categorie.php','/contact.php','/panier.php' => ' rel="stylesheet" href="/assets/css/categorie-contact.css">' ,
         '/plats.php' => ' rel="stylesheet" href="/assets/css/plat.css">' ,
+        default => ' rel="stylesheet" href="style.css">',
       };
     ?>
 

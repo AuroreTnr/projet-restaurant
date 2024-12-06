@@ -44,7 +44,9 @@ $return_value = match ($uri) {
    '/contact.php' => ' src="/assets/JS/validation-contact.js">' ,
    '/categorie.php' => ' src="/assets/JS/script-categorie.js">' ,
    '/plats.php' => ' src="/assets/JS/script-plat.js">' ,
-   '/panier.php' => ' src="/assets/JS/validation-panier.js">'
+   '/panier.php' => ' src="/assets/JS/validation-panier.js">' ,
+   default => ' src="/script.js">',
+
 } . "</script>";
 
 ?>
