@@ -69,7 +69,6 @@ $data = [
             "name"=>"spaghetti legumes",
             "image"=> "./assets/img/food_img/pasta/spaghetti-legumes.jpg",
             "imageCategorie"=> "./assets/img/cat_img/pasta_cat_4.jpg",
-            "imageCategorie"=> "./assets/img/cat_img/pasta_cat_4.jpg",
             "prix"=> 8,
             "description"=> "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
         ],
