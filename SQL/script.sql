@@ -84,6 +84,19 @@ CREATE TABLE `commande` (
   FOREIGN KEY (`id_plat`) REFERENCES `plat`(`id`)
 );
 
+
+INSERT INTO `commande` (id_plat, quantite, total, date_commande, etat, nom_client, telephone_client, email_client, adresse_client) 
+VALUES
+(1, 2, 10.10, '2025-01-09', 'En cours', 'Alice Martin', '0601020304', 'alice.martin@email.com', '25 rue de la République, 75003 Paris'),
+(3, 1, 6.00, '2025-01-08', 'En préparation', 'Pierre Dupuis', '0605060708', 'pierre.dupuis@email.com', '12 avenue de la Liberté, 75015 Paris'),
+(5, 3, 18.60, '2025-01-07', 'Livrée', 'Marie Lefevre', '0712345678', 'marie.lefevre@email.com', '5 rue des Fleurs, 75011 Paris'),
+(2, 1, 7.60, '2025-01-09', 'En cours', 'Lucas Bernard', '0612345678', 'lucas.bernard@email.com', '38 boulevard Saint-Germain, 75005 Paris'),
+(4, 2, 12.00, '2025-01-06', 'Annulée', 'Sophie Dubois', '0607080910', 'sophie.dubois@email.com', '58 rue de la Gare, 75018 Paris');
+
+
+
+
+
 -- Structure de la table `utilisateur`
 CREATE TABLE `utilisateur` (
   `id` int AUTO_INCREMENT PRIMARY KEY,
@@ -91,3 +104,36 @@ CREATE TABLE `utilisateur` (
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
 );
+
+INSERT INTO `utilisateur` (nom_prenom, email, password)
+VALUES
+('Alice Martin', 'alice.martin@email.com', 'hashedpassword1'),
+('Pierre Dupuis', 'pierre.dupuis@email.com', 'hashedpassword2'),
+('Marie Lefevre', 'marie.lefevre@email.com', 'hashedpassword3'),
+('Lucas Bernard', 'lucas.bernard@email.com', 'hashedpassword4'),
+('Sophie Dubois', 'sophie.dubois@email.com', 'hashedpassword5'),
+('Julien Lefevre', 'julien.lefevre@email.com', 'hashedpassword6'),
+('Chloé Dupont', 'chloe.dupont@email.com', 'hashedpassword7'),
+('Thibault Moreau', 'thibault.moreau@email.com', 'hashedpassword8');
+
+
+
+
+-- exercice 1 : Afficher la liste des commandes ( la liste doit faire apparaitre la date, les informations du client, le plat et le prix )--
+SELECT commande.date_commande, commande.nom_client, commande.telephone_client, commande.email_client, commande.adresse_client, plat.libelle, commande.total
+FROM commande
+JOIN plat ON commande.id_plat = plat.id;
+ 
+
+-- exercice 2 : Afficher la liste des plats en spécifiant la catégorie --
+SELECT plat.*, categorie.libelle
+FROM plat
+JOIN categorie ON plat.id_categorie = categorie.id;
+
+
+-- exercice 3 : Afficher les catégories et le nombre de plats actifs dans chaque catégorie --
+SELECT categorie.libelle, COUNT(plat.id) AS nombre_plats
+FROM categorie
+JOIN plat ON categorie.id = plat.id_categorie
+WHERE plat.active = "true"
+GROUP BY categorie.id;
