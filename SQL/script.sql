@@ -34,38 +34,39 @@ CREATE TABLE `plat` (
   FOREIGN KEY (`id_categorie`) REFERENCES `categorie`(`id`)
 );
 
-INSERT INTO `plat` (libelle, description, prix, image, active, id_categorie) VALUES
-('Burger charolais', 'Rustique et delicieux hamburger charolais. Viande Française', 9.90, './assets/img/food_img/burger/burger-charolais.jpg', 'true', 1),
-('Cheesburger', 'Delicieux et fondant cheesburger.', 7.60, './assets/img/food_img/burger/cheesburger.jpg', 'true', 1),
-('Le classique', 'L indémodable classique.', 6.00, './assets/img/food_img/burger/hamburger.jpg', 'true', 1),
+INSERT INTO `plat` (libelle, description, prix, image, id_categorie, active) VALUES
+('Burger charolais', 'Rustique et delicieux hamburger charolais. Viande Française', 9.90, './assets/img/food_img/burger/burger-charolais.jpg', 1, 'true'),
+('Cheesburger', 'Delicieux et fondant cheesburger.', 7.60, './assets/img/food_img/burger/cheesburger.jpg', 1, 'true'),
+('Le classique', 'L indémodable classique.', 6.00, './assets/img/food_img/burger/hamburger.jpg', 1, 'true'),
 
-('Pizza chorizo', 'La classique chorizo.', 6.00, './assets/img/food_img/pizza/pizza-chorizo.jpg', 'true', 2),
-('Pizza basilic', 'Au basilic frais.', 6.20, './assets/img/food_img/pizza/pizza-fromage-basilic.jpg', 'true', 2),
-('Pizza saumon', 'Au saumon sauvage.', 8.00, './assets/img/food_img/pizza/pizza-salmon.png', 'true', 2),
+('Pizza chorizo', 'La classique chorizo.', 6.00, './assets/img/food_img/pizza/pizza-chorizo.jpg', 2, 'true'),
+('Pizza basilic', 'Au basilic frais.', 6.20, './assets/img/food_img/pizza/pizza-fromage-basilic.jpg', 2, 'true'),
+('Pizza saumon', 'Au saumon sauvage.', 8.00, './assets/img/food_img/pizza/pizza-salmon.png', 2, 'true'),
 
-('Spaghetti legumes', 'Délicieuse pâte aux légumes frais.', 6.00, './assets/img/food_img/pasta/spaghetti-legumes.jpg', 'true', 3),
-('Lasagne', 'Au boeuf frais.', 6.20, './assets/img/food_img/pasta/lasagnes_viande.jpg', 'true', 3),
+('Spaghetti legumes', 'Délicieuse pâte aux légumes frais.', 6.00, './assets/img/food_img/pasta/spaghetti-legumes.jpg', 3, 'true'),
+('Lasagne', 'Au boeuf frais.', 6.20, './assets/img/food_img/pasta/lasagnes_viande.jpg', 3, 'true'),
 
-('Salade fraicheur', 'La salade la plus demandée.', 6.00, './assets/img/food_img/salade/salade-fraicheur.jpg', 'true', 4),
-('Salade composee', 'Délicieusement fraiche.', 6.20, './assets/img/food_img/salade/salade-composee.jpg', 'true', 4),
-('Salade du chef', 'Délicieusement salade fraiche.', 6.40, './assets/img/food_img/salade/salade-du-chef.jpg', 'true', 4),
+('Salade fraicheur', 'La salade la plus demandée.', 6.00, './assets/img/food_img/salade/salade-fraicheur.jpg', 4, 'true'),
+('Salade composee', 'Délicieusement fraiche.', 6.20, './assets/img/food_img/salade/salade-composee.jpg', 4, 'true'),
+('Salade du chef', 'Délicieusement salade fraiche.', 6.40, './assets/img/food_img/salade/salade-du-chef.jpg', 4, 'true'),
 
-('Sandwish roti crudite', 'Le sandwish le plus demandé.', 4.50, './assets/img/food_img/sandwish/sandwish-roti-crudite.jpg', 'true', 5),
-('sandwish fromage', 'Délicieusement fromage de brebis.', 6.20, './assets/img/food_img/sandwish/sandwish-fromage.jpg', 'true', 5),
-('Maxi sandwish', 'Le sandwish à emporter partout.', 3.40, './assets/img/food_img/sandwish/maxi-sandwish.jpg', 'true', 5),
+('Sandwish roti crudite', 'Le sandwish le plus demandé.', 4.50, './assets/img/food_img/sandwish/sandwish-roti-crudite.jpg', 5, 'true'),
+('sandwish fromage', 'Délicieusement fromage de brebis.', 6.20, './assets/img/food_img/sandwish/sandwish-fromage.jpg', 5, 'true'),
+('Maxi sandwish', 'Le sandwish à emporter partout.', 3.40, './assets/img/food_img/sandwish/maxi-sandwish.jpg', 5, 'true'),
 
-('bouillon de legumes', 'Le bouillon aux petits légumes de notre potagé.', 4.50, './assets/img/food_img/veggie/bouillon-legume.jpg', 'true', 6),
-('Burger veggie', 'Délicieusement burger aux haricot rouge.', 6.20, './assets/img/food_img/veggie/burger-veggie.jpg', 'true', 6),
-('Poêlée du chef', 'La poêlée du chef la plus gourmande de notre carte.', 3.40, './assets/img/food_img/veggie/poelee-du-chef.jpg', 'true', 6),
+('bouillon de legumes', 'Le bouillon aux petits légumes de notre potagé.', 4.50, './assets/img/food_img/veggie/bouillon-legume.jpg', 6, 'true'),
+('Burger veggie', 'Délicieusement burger aux haricot rouge.', 6.20, './assets/img/food_img/veggie/burger-veggie.jpg', 6, 'true'),
+('Poêlée du chef', 'La poêlée du chef la plus gourmande de notre carte.', 3.40, './assets/img/food_img/veggie/poelee-du-chef.jpg', 6, 'true'),
 
-('Wrap crudite', 'Le passe partout.', 4.50, './assets/img/food_img/wrap/wrap-crudite.jpg', 'true', 7),
-('Wrap mexicain', 'Délicieusement wrap spicy.', 6.20, './assets/img/food_img/wrap/wrap-mexicain.jpg', 'true', 7),
-('Wrap poulet', 'Délicieux wrap avec du poulet  Français, élévé en libertée.', 7.40, './assets/img/food_img/wrap/wrap-poulet.jpg', 'true', 7),
+('Wrap crudite', 'Le passe partout.', 4.50, './assets/img/food_img/wrap/wrap-crudite.jpg', 7, 'true'),
+('Wrap mexicain', 'Délicieusement wrap spicy.', 6.20, './assets/img/food_img/wrap/wrap-mexicain.jpg', 7, 'true'),
+('Wrap poulet', 'Délicieux wrap avec du poulet  Français, élévé en libertée.', 7.40, './assets/img/food_img/wrap/wrap-poulet.jpg', 7, 'true'),
 
-('Ravioli', 'Délicieux ravioli au boeuf.', 7.50, './assets/img/food_img/asiatique-food/ravioli.jpg', 'true', 8),
-('Riz cantonais', 'Délicieusement riz.', 5.20, './assets/img/food_img/asiatique-food/riz-cantonais.jpg', 'true', 8),
-('Soupe asiatique', 'Délicieuse soupe.', 8.40, './assets/img/food_img/asiatique-food/soupe-asiatique.jpg', 'true', 8),
-('Sushi', 'Délicieuse sushi.', 9.90, './assets/img/food_img/asiatique-food/sushi.jpg', 'true', 8);
+('Ravioli', 'Délicieux ravioli au boeuf.', 7.50, './assets/img/food_img/asiatique-food/ravioli.jpg', 8, 'true'),
+('Riz cantonais', 'Délicieusement riz.', 5.20, './assets/img/food_img/asiatique-food/riz-cantonais.jpg', 8, 'true'),
+('Soupe asiatique', 'Délicieuse soupe.', 8.40, './assets/img/food_img/asiatique-food/soupe-asiatique.jpg', 8, 'true'),
+('Sushi', 'Délicieuse sushi.', 9.90, './assets/img/food_img/asiatique-food/sushi.jpg', 8, 'true');
+
 
 
 
@@ -81,7 +82,7 @@ CREATE TABLE `commande` (
   `telephone_client` varchar(20) NOT NULL,
   `email_client` varchar(150) NOT NULL,
   `adresse_client` varchar(255) NOT NULL,
-  FOREIGN KEY (`id_plat`) REFERENCES `plat`(`id`)
+  FOREIGN KEY (`id_plat`) REFERENCES `plat`(`id`) ON DELETE CASCADE
 );
 
 
@@ -137,3 +138,72 @@ FROM categorie
 JOIN plat ON categorie.id = plat.id_categorie
 WHERE plat.active = "true"
 GROUP BY categorie.id;
+
+-- exercice 4 : Liste des plats les plus vendus par ordre décroissant --
+SELECT plat.libelle, commande.quantite
+FROM commande
+JOIN plat ON commande.id_plat = plat.id
+ORDER BY commande.quantite DESC;
+
+
+-- exercice 5 : Le plat le plus rémunérateur --
+SELECT libelle, prix
+FROM plat
+WHERE prix = (SELECT MAX(prix) FROM plat);
+
+
+-- Liste des clients et le chiffre d'affaires généré par client (par ordre décroissant) --
+SELECT nom_client, total AS chiffre_affaires_genere
+FROM commande
+ORDER BY chiffre_affaires_genere DESC;
+
+
+-- rajouter un plat --
+INSERT INTO plat (libelle, description, prix, image, id_categorie, active) VALUES
+('Burger sauce chocolat', 'Un burger hors du commun', 20, './assets/img/food_img/burger/burger-chocolat.jpg', 1, 'false');
+
+-- rajouter une commande --
+INSERT INTO commande (id_plat, quantite, total, date_commande, etat, nom_client, telephone_client, email_client, adresse_client) VALUES 
+(26, 2, 40.00, '2025-01-10', 'Livréeee', 'Alex Dupond', '0636598635', 'alexdupond@email.com', '58 rue du chemin, 75018 Paris');
+
+
+
+-- Ecrivez une requête permettant de supprimer les plats non actif de la base de données --
+
+-- SI CONTAINTE SUR CLEF ETRANGERE 'ON DELETE CASCADE'  --
+DELETE FROM plat
+WHERE active = "false";
+
+-- SI PAS LA CONTAINTE 'ON DELETE CASCADE' SUR CLEF ETRANGERE --
+DELETE FROM commande
+WHERE id_plat IN (SELECT id FROM plat WHERE active = 'false');
+
+DELETE FROM plat
+WHERE active = 'false';
+
+
+
+
+-- Ecrivez une requête permettant de supprimer les commandes avec le statut livré --
+DELETE FROM commande
+WHERE etat = "Livréeee";
+
+
+
+-- Ecrivez un script sql permettant d'ajouter une nouvelle catégorie et un plat dans cette nouvelle catégorie. --
+
+INSERT INTO `categorie` (libelle, image, active) VALUES
+('Indienne','./assets/img/cat_img/indienne_cat.jpg','true');
+
+INSERT INTO plat (libelle, description, prix, image, id_categorie, active) VALUES
+('Plat indien', 'Ce plat est traditionnel', 15.10, './assets/img/food_img/burger/plat_indien.jpg', 1, 'false');
+
+-- Ecrivez une requête permettant d'augmenter de 10% le prix des plats de la catégorie 'Pizza' --
+
+UPDATE plat
+SET prix = (prix + (prix * 10 / 100))
+WHERE id_categorie = (SELECT id FROM categorie WHERE libelle = "Pizza"); 
+
+-- 1 semaine pour finir le fil rouge
+
+-- 3 semaine pour php object et initiation a mvc
