@@ -102,10 +102,10 @@
 
       <div class="input-group input-group-sm mb-1 justify-content-center d-flex">
         <!-- formulaire recherche -->
-        <form action="recherche.php" method="get" class="d-flex w-100">
+        <form action="plats.php" method="get" class="d-flex w-100">
             <input type="text" name="search" placeholder="rechercher un plat ..." 
                   value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>" 
-                  required class="p-1 form-control me-2">
+                   class="p-1 form-control me-2">
             <input type="submit" class="btn btn-light btn-sm text-secondary" value="Rechercher">
         </form>
       </div>
@@ -114,14 +114,6 @@
 
   </div>
 </div>
-
-    <!-- Container search plat -->
-    <div class="container-fluid p-4">
-      <div class="row align-items-center justify-content-center container-plat-search">
-
-
-      </div>
-    </div>
 
 
 

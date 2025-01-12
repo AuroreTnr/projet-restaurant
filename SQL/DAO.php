@@ -107,11 +107,26 @@ function get_recherche_bar($db, $mot_rechercher){
 }
 
 
-// Page accueil -> trouver comment quand on recherche "burger" ça nous amene à la page plat avec le mot burger dans input plus le resultat qui s'affiche.
 
-// Page categorie -> Fonction qui quand on clique sur categorie "burger" ca ammene aux burgers
 
-// Page accueil -> Fonction qui quand on clique une categorie "burger" à la une ça va sur plat deja filtrer sur "burger
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Page plats -> Apprendre à faire la pagination
 
 // Page accueil (après page panier)-> Fonction qui quand on clique sur un plat sur add + ça l' ajouter au panier
 
@@ -125,7 +140,7 @@ function get_recherche_bar($db, $mot_rechercher){
 
 
 
-
+?>
 
 
 

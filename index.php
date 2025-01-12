@@ -13,64 +13,15 @@ $categories_populaire = get_populaire_categorie($db);
 
 $plats_populaire = get_populaire_plat($db);
 
-$mot_rechercher = isset( $_GET['search']) ? htmlentities( $_GET['search']) : "";
-
-$resultat_recherche = get_recherche_bar($db, $mot_rechercher);
 
 
 ?>
 
-    <!-- RESULTAT RECHECHE  -->
-
-  <section>
-
-    <?php if (isset($_GET['search'])) :?>
-      <!-- condition d affichahe du h2 resultats-->
-      <?php if(count($resultat_recherche) > 0 ) :?>
-        <h2 class="text-center mb-4" >Résultats pour : '<?=htmlentities($mot_rechercher);?>'</h2>
-        <?php else :?>
-        <h2 class="text-center mb-4" >Aucun résultats pour : '<?=htmlentities($mot_rechercher);?>'</h2>
-      <?php endif ; ?>
-
-      <!-- affichage resultats -->
-      <div class="container-fluid p-4">
-        <div class="row align-items-center justify-content-center container-plat">
-
-            <?php foreach ($resultat_recherche as $plat) : ?>
-
-                <div class="col-9 col-md-6 col-lg-3" data-key="<?= $plat['libelle']; ?>">
-                  <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                      <div class="col-md-2">
-                        <img src="<?= $plat['image']; ?>" class="img-fluid rounded-start" alt="<?= $plat['libelle']; ?>">
-                      </div>
-                      <div class="col-md-10">
-                        <div class="card-body">
-                          <div class="d-flex align-items-baseline justify-content-between align-self-end">
-                            <p class="card-text"><small class="text-body-secondary"><?= $plat['prix'] . ' '. '€'; ?></small></p>
-                            <div class="btn small border-warning text-dark border-warning text-dark">add <i class="bi bi-plus"></i></div>
-                          </div>
-                          <h5 class="card-title fs-6"><?= $plat['libelle']; ?></h5>
-                          <p class="card-text"><?= $plat['description']; ?></p>
-                        </div>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-                
-            <?php endforeach ?>
-
-        </div>
-      </div>
-
-      
-    <?php endif; ?>
-  </section>
 
 
     <!-- AFFICHAGE PLATS POPULAIRE -->
 
-    <h2 class="text-center mb-4" >Plats Populaire</h2>
+    <h2 class="text-center my-5" >Plats Populaire</h2>
 
       <div class="container-fluid p-4">
         <div class="row align-items-center justify-content-center container-plat">
@@ -107,8 +58,8 @@ $resultat_recherche = get_recherche_bar($db, $mot_rechercher);
 
           <!-- AFFICHAGE CATEGORIE POPULAIRE -->
 
-    <section class="my-5">
-    <h2 class="text-center mb-4">Catégories Populaire</h2>
+    <section>
+    <h2 class="text-center my-5">Catégories Populaire</h2>
 
       <div class="container-fluid p-4 container-plat">
         <div class="row align-items-center justify-content-center">
@@ -125,7 +76,7 @@ $resultat_recherche = get_recherche_bar($db, $mot_rechercher);
                         <div class="card-body">
                           <h5 class="card-title fs-6"><?= $value['libelle']; ?></h5>
                           <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                          <a href="./plats.php" class="stretched-link" data-key=<?= $value['libelle']; ?>></a>
+                          <a href="./plats.php?search=<?=urlencode($value['libelle']); ?>" class="stretched-link" data-key=<?= $value['libelle']; ?>></a>
                           
                         </div>
                       </div>
@@ -143,7 +94,7 @@ $resultat_recherche = get_recherche_bar($db, $mot_rechercher);
 
 
       <!-- AFFICHAGE CAROUSEL -->
-<div class="container container-fluid mb-5">
+<div class="container container-fluid my-5">
   <div id="carouselExampleAutoplaying" class="carousel slide container-fluid" data-bs-ride="carousel" width="100%;">
 
     <div class="carousel-indicators">

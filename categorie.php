@@ -30,7 +30,7 @@ $requete_categories = get_categorie($db);
                         <div class="card-body">
                           <h5 class="card-title fs-6"><?= $value['libelle']; ?></h5>
                           <p class="card-text">Lorem ipsum dolor sit amet.</p>
-                          <a href="./plats.php" class="stretched-link" data-key=<?= $value['libelle']; ?>></a>
+                          <a href="./plats.php?search=<?= urlencode($value['libelle']); ?>" class="stretched-link" data-key="<?= $value['libelle']; ?>"></a>
 
                         </div>
                       </div>
