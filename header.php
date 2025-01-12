@@ -96,14 +96,22 @@
     <p class="card-text text-white"><?= $baniereSubtitle ?></p>
 
     <!-- Condition affichage search -->
-    <?php if ($_SERVER["REQUEST_URI"] === "/index.php" || $_SERVER["REQUEST_URI"] === "/plats.php"): ?>
-      <div class="input-group input-group-sm mb-3">
-        <form action="search-page.php" method="get" >
-          <input type="text" name="search" placeholder="rechercher un plat ..." value="" class="p-1">
-          <input type="submit" class="btn btn-light btn-sm text-secondary" value="rechercher">
+    <?php $debut_page_courante = basename($_SERVER['PHP_SELF']);?>
+
+    <?php if ($debut_page_courante === "index.php" || $debut_page_courante === "plats.php"): ?>
+
+      <div class="input-group input-group-sm mb-1 justify-content-center d-flex">
+        <!-- formulaire recherche -->
+        <form action="recherche.php" method="get" class="d-flex w-100">
+            <input type="text" name="search" placeholder="rechercher un plat ..." 
+                  value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>" 
+                  required class="p-1 form-control me-2">
+            <input type="submit" class="btn btn-light btn-sm text-secondary" value="Rechercher">
         </form>
       </div>
+
     <?php endif; ?>
+
   </div>
 </div>
 
@@ -118,6 +126,7 @@
 
 
     <!-- QUALITE RESTAURANT -->
+    <!-- Condition affichage logo -->
     <?php if ($_SERVER["REQUEST_URI"] === "/index.php" || $_SERVER["REQUEST_URI"] === "/plats.php" || $_SERVER["REQUEST_URI"] === "/categorie.php"): ?>
         <div class="container-fluid container-district">
           <div class="row d-flex justify-content-center text-center text-white p-3">

@@ -37,24 +37,24 @@ CREATE TABLE `plat` (
 INSERT INTO `plat` (libelle, description, prix, image, id_categorie, active) VALUES
 ('Burger charolais', 'Rustique et delicieux hamburger charolais. Viande Française', 9.90, './assets/img/food_img/burger/burger-charolais.jpg', 1, 'true'),
 ('Cheesburger', 'Delicieux et fondant cheesburger.', 7.60, './assets/img/food_img/burger/cheesburger.jpg', 1, 'true'),
-('Le classique', 'L indémodable classique.', 6.00, './assets/img/food_img/burger/hamburger.jpg', 1, 'true'),
+('Burger classique', 'L indémodable classique.', 6.00, './assets/img/food_img/burger/hamburger.jpg', 1, 'true'),
 
 ('Pizza chorizo', 'La classique chorizo.', 6.00, './assets/img/food_img/pizza/pizza-chorizo.jpg', 2, 'true'),
 ('Pizza basilic', 'Au basilic frais.', 6.20, './assets/img/food_img/pizza/pizza-fromage-basilic.jpg', 2, 'true'),
 ('Pizza saumon', 'Au saumon sauvage.', 8.00, './assets/img/food_img/pizza/pizza-salmon.png', 2, 'true'),
 
-('Spaghetti legumes', 'Délicieuse pâte aux légumes frais.', 6.00, './assets/img/food_img/pasta/spaghetti-legumes.jpg', 3, 'true'),
-('Lasagne', 'Au boeuf frais.', 6.20, './assets/img/food_img/pasta/lasagnes_viande.jpg', 3, 'true'),
+('Pâte legumes', 'Délicieuse pâte aux légumes frais.', 6.00, './assets/img/food_img/pasta/spaghetti-legumes.jpg', 3, 'true'),
+('Lasagne pâte fraiche', 'Au boeuf frais.', 6.20, './assets/img/food_img/pasta/lasagnes_viande.jpg', 3, 'true'),
 
 ('Salade fraicheur', 'La salade la plus demandée.', 6.00, './assets/img/food_img/salade/salade-fraicheur.jpg', 4, 'true'),
 ('Salade composee', 'Délicieusement fraiche.', 6.20, './assets/img/food_img/salade/salade-composee.jpg', 4, 'true'),
 ('Salade du chef', 'Délicieusement salade fraiche.', 6.40, './assets/img/food_img/salade/salade-du-chef.jpg', 4, 'true'),
 
 ('Sandwish roti crudite', 'Le sandwish le plus demandé.', 4.50, './assets/img/food_img/sandwish/sandwish-roti-crudite.jpg', 5, 'true'),
-('sandwish fromage', 'Délicieusement fromage de brebis.', 6.20, './assets/img/food_img/sandwish/sandwish-fromage.jpg', 5, 'true'),
+('Sandwish fromage', 'Délicieusement fromage de brebis.', 6.20, './assets/img/food_img/sandwish/sandwish-fromage.jpg', 5, 'true'),
 ('Maxi sandwish', 'Le sandwish à emporter partout.', 3.40, './assets/img/food_img/sandwish/maxi-sandwish.jpg', 5, 'true'),
 
-('bouillon de legumes', 'Le bouillon aux petits légumes de notre potagé.', 4.50, './assets/img/food_img/veggie/bouillon-legume.jpg', 6, 'true'),
+('Bouillon de legumes', 'Le bouillon aux petits légumes de notre potagé.', 4.50, './assets/img/food_img/veggie/bouillon-legume.jpg', 6, 'true'),
 ('Burger veggie', 'Délicieusement burger aux haricot rouge.', 6.20, './assets/img/food_img/veggie/burger-veggie.jpg', 6, 'true'),
 ('Poêlée du chef', 'La poêlée du chef la plus gourmande de notre carte.', 3.40, './assets/img/food_img/veggie/poelee-du-chef.jpg', 6, 'true'),
 
@@ -88,11 +88,16 @@ CREATE TABLE `commande` (
 
 INSERT INTO `commande` (id_plat, quantite, total, date_commande, etat, nom_client, telephone_client, email_client, adresse_client) 
 VALUES
-(1, 2, 10.10, '2025-01-09', 'En cours', 'Alice Martin', '0601020304', 'alice.martin@email.com', '25 rue de la République, 75003 Paris'),
-(3, 1, 6.00, '2025-01-08', 'En préparation', 'Pierre Dupuis', '0605060708', 'pierre.dupuis@email.com', '12 avenue de la Liberté, 75015 Paris'),
-(5, 3, 18.60, '2025-01-07', 'Livrée', 'Marie Lefevre', '0712345678', 'marie.lefevre@email.com', '5 rue des Fleurs, 75011 Paris'),
-(2, 1, 7.60, '2025-01-09', 'En cours', 'Lucas Bernard', '0612345678', 'lucas.bernard@email.com', '38 boulevard Saint-Germain, 75005 Paris'),
-(4, 2, 12.00, '2025-01-06', 'Annulée', 'Sophie Dubois', '0607080910', 'sophie.dubois@email.com', '58 rue de la Gare, 75018 Paris');
+(1, 3, 15.15, '2025-01-11', 'Livrée', 'Julien Lefort', '0622334455', 'julien.lefort@email.com', '10 rue des Champs Elysées, 75008 Paris'),
+(2, 2, 15.20, '2025-01-10', 'En préparation', 'Claire Dupont', '0698765432', 'claire.dupont@email.com', '19 avenue Montaigne, 75008 Paris'),
+(3, 4, 24.00, '2025-01-12', 'Livrée', 'David Boucher', '0656789123', 'david.boucher@email.com', '21 rue de la Paix, 75002 Paris'),
+(4, 1, 6.00, '2025-01-11', 'En cours', 'Nathalie Vasseur', '0645789234', 'nathalie.vasseur@email.com', '43 rue de la Bastille, 75011 Paris'),
+(5, 5, 31.50, '2025-01-12', 'Livrée', 'Michel Legrand', '0666789101', 'michel.legrand@email.com', '76 rue du Faubourg Saint-Antoine, 75012 Paris'),
+(1, 2, 10.10, '2025-01-10', 'En préparation', 'Caroline Lemoine', '0681234567', 'caroline.lemoine@email.com', '30 rue de la République, 75003 Paris'),
+(3, 3, 18.00, '2025-01-07', 'Livrée', 'Xavier Martin', '0623345567', 'xavier.martin@email.com', '7 avenue de la Concorde, 75008 Paris'),
+(4, 1, 6.00, '2025-01-11', 'En préparation', 'François Guérin', '0654321098', 'francois.guerin@email.com', '25 rue de la Tour, 75007 Paris'),
+(5, 3, 18.60, '2025-01-06', 'Livrée', 'Amandine Lefevre', '0776543210', 'amandine.lefevre@email.com', '10 rue des Lilas, 75012 Paris');
+
 
 
 
@@ -203,6 +208,12 @@ INSERT INTO plat (libelle, description, prix, image, id_categorie, active) VALUE
 UPDATE plat
 SET prix = (prix + (prix * 10 / 100))
 WHERE id_categorie = (SELECT id FROM categorie WHERE libelle = "Pizza"); 
+
+
+-- donner les plats les plus populaire
+
+-- donner les catégories les plus populaires
+
 
 -- 1 semaine pour finir le fil rouge
 

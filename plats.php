@@ -1,10 +1,19 @@
 <?php 
 $title = "Plats";
 $baniereTitle = "Plats";
+$baniereSubtitle = "";
 $baniereImage = "assets/img/bg3.jpeg";
 require 'header.php';
-require 'data.php';
+
+require 'SQL/DAO.php';
+
+$db = connexionBase();
+
+$requete_plat = get_plat($db);
+
 ?>
+
+
 
 
     <!-- PLAT -->
@@ -15,15 +24,14 @@ require 'data.php';
 
       
         
-          <?php foreach ($data as $key => $value) : ?>
 
-            <?php foreach ($value as $food) : ?>
+            <?php foreach ($requete_plat as $food) : ?>
 
-                <div class="col-9 col-md-6 col-lg-3" data-key="<?= $food['name']; ?>">
+                <div class="col-9 col-md-6 col-lg-3" data-key="<?= $food['libelle']; ?>">
                   <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                       <div class="col-md-2">
-                        <img src="<?= $food['image']; ?>" class="img-fluid rounded-start" alt="<?= $food['name']; ?>">
+                        <img src="<?= $food['image']; ?>" class="img-fluid rounded-start" alt="<?= $food['libelle']; ?>">
                       </div>
                       <div class="col-md-10">
                         <div class="card-body">
@@ -31,7 +39,7 @@ require 'data.php';
                             <p class="card-text"><small class="text-body-secondary"><?= $food['prix'] . ' '. '€'; ?></small></p>
                             <div class="btn small border-warning text-dark border-warning text-dark">add <i class="bi bi-plus"></i></div>
                           </div>
-                          <h5 class="card-title fs-6"><?= $food['name']; ?></h5>
+                          <h5 class="card-title fs-6"><?= $food['libelle']; ?></h5>
                           <p class="card-text"><?= $food['description']; ?></p>
                         </div>
                     </div>
@@ -40,7 +48,6 @@ require 'data.php';
                 </div>
                 
             <?php endforeach ?>
-          <?php endforeach ?>
 
         </div>
       </div>
