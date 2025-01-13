@@ -21,7 +21,7 @@ $plats_populaire = get_populaire_plat($db);
 
     <!-- AFFICHAGE PLATS POPULAIRE -->
 
-    <h2 class="text-center my-5" >Plats Populaire</h2>
+    <h2 class="text-center mt-5 text-decoration-underline" >Plats Populaires</h2>
 
       <div class="container-fluid p-4">
         <div class="row align-items-center justify-content-center container-plat">
@@ -41,8 +41,8 @@ $plats_populaire = get_populaire_plat($db);
                         <div class="card-body">
                           <div class="d-flex align-items-baseline justify-content-between align-self-end">
                             <p class="card-text"><small class="text-body-secondary"><?= $plat['prix'] . ' '. '€'; ?></small></p>
-                            <div class="btn small border-warning text-dark border-warning text-dark">add <i class="bi bi-plus"></i></div>
-                          </div>
+                            <a href="addpanier.php?id=<?=$plat['id'];?>" class="btn small border-warning text-dark">add <i class="bi bi-plus"></i></a>
+                            </div>
                           <h5 class="card-title fs-6"><?= $plat['libelle']; ?></h5>
                           <p class="card-text"><?= $plat['description']; ?></p>
                         </div>
@@ -59,7 +59,7 @@ $plats_populaire = get_populaire_plat($db);
           <!-- AFFICHAGE CATEGORIE POPULAIRE -->
 
     <section>
-    <h2 class="text-center my-5">Catégories Populaire</h2>
+    <h2 class="text-center mt-5 text-decoration-underline">Catégories Populaires</h2>
 
       <div class="container-fluid p-4 container-plat">
         <div class="row align-items-center justify-content-center">

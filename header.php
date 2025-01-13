@@ -1,6 +1,9 @@
+<?php
+require 'panier.class.php';
+$panier = new panier();
+?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,13 +27,14 @@
 
     <!-- link CSS -->
     <?php
-      $uri = $_SERVER["REQUEST_URI"];
+
+      $basename_chemin = basename($_SERVER['PHP_SELF']);
 
       echo "<link" . 
-      $return_value = match ($uri) {
-        '/index.php' => ' rel="stylesheet" href="style.css">' ,
-        '/categorie.php','/contact.php','/panier.php' => ' rel="stylesheet" href="/assets/css/categorie-contact.css">' ,
-        '/plats.php' => ' rel="stylesheet" href="/assets/css/plat.css">' ,
+      $return_value = match ($basename_chemin) {
+        'index.php' => ' rel="stylesheet" href="style.css">' ,
+        'categorie.php','contact.php','panier.php' => ' rel="stylesheet" href="/assets/css/categorie-contact.css">' ,
+        'plats.php' => ' rel="stylesheet" href="/assets/css/plat.css">' ,
         default => ' rel="stylesheet" href="style.css">',
       };
     ?>
@@ -96,9 +100,9 @@
     <p class="card-text text-white"><?= $baniereSubtitle ?></p>
 
     <!-- Condition affichage search -->
-    <?php $debut_page_courante = basename($_SERVER['PHP_SELF']);?>
 
-    <?php if ($debut_page_courante === "index.php" || $debut_page_courante === "plats.php"): ?>
+
+    <?php if ($basename_chemin === "index.php" || $basename_chemin === "plats.php"): ?>
 
       <div class="input-group input-group-sm mb-1 justify-content-center d-flex">
         <!-- formulaire recherche -->

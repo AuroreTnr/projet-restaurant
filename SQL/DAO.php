@@ -24,8 +24,10 @@ function connexionBase(){
  * @param mixed $db
  * @return mixed
  */
-function get_categorie($db) {
-    $requete = $db->query("SELECT * FROM categorie WHERE active = 'true' LIMIT 6 ");
+function get_categorie($db, $nombre_categorie_par_page, $page_courante) {
+    $offset = ($page_courante - 1) * $nombre_categorie_par_page;
+    $requete = $db->query("SELECT * FROM categorie LIMIT $nombre_categorie_par_page OFFSET $offset");
+
     $tableau = $requete->fetchAll(PDO::FETCH_ASSOC);
     $requete->closeCursor();
 
@@ -33,14 +35,15 @@ function get_categorie($db) {
 }
 
 
-
 /**
  * donne les plats avec une limite à 6
  * @param mixed $db
  * @return mixed
  */
-function get_plat($db) {
-    $requete = $db->query("SELECT * FROM plat LIMIT 6");
+function get_plat($db, $nombre_plat_par_page, $page_courante) {
+    $offset = ($page_courante - 1) * $nombre_plat_par_page;
+    $requete = $db->query("SELECT * FROM plat LIMIT $nombre_plat_par_page OFFSET $offset");
+
     $tableau = $requete->fetchAll(PDO::FETCH_ASSOC);
     $requete->closeCursor();
 
@@ -102,7 +105,29 @@ function get_recherche_bar($db, $mot_rechercher){
 
     return $tableau;
 
+}
 
+function get_produit_add_session($db){
+    $requete = $db->prepare("SELECT id FROM plat WHERE id=?");
+
+    $requete->execute(array($_GET["id"]));
+
+    $resultat = $requete->fetch(PDO::FETCH_OBJ);
+
+    $requete->closeCursor();
+
+    return $resultat;
+
+}
+
+function display_plat_panier($db, $ids){
+    $requete = $db->query('SELECT * FROM plat WHERE id IN ('.implode(',',$ids).')');
+
+    $resultat = $requete->fetchAll(PDO::FETCH_OBJ);
+
+    $requete->closeCursor();
+
+    return $resultat;
 
 }
 
@@ -111,33 +136,16 @@ function get_recherche_bar($db, $mot_rechercher){
 
 
 
+// Page plats -> faire un cours sur la pagination
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// Page plats -> Apprendre à faire la pagination
-
-// Page accueil (après page panier)-> Fonction qui quand on clique sur un plat sur add + ça l' ajouter au panier
-
+// Page Panier -> à faire
+// Page panier -> cours panier a faire
 // Page accueil (après page panier) -> ajout d' un point si object dans panier
 
-// Page Panier à faire
 
 // FONCTION COMMANDE + FONCTION MAIL
-
-
-
 
 
 ?>

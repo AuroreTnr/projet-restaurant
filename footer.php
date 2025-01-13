@@ -5,11 +5,14 @@
 <footer>
   <div class="container-footer d-flex flex-column gap-4 p-4 text-light">
     <!-- VIDEO -->
-    <?php if ($_SERVER['REQUEST_URI'] === "/index.php"): ?>
-      <video src="assets/video/video_medium.mp4" class="video rounded-top object-fit-cover border-bottom" muted autoplay loop></video>
-    <?php endif; ?>
+    <?php 
+      $basename_chemin = basename($_SERVER['PHP_SELF']);
 
-    <div class="d-flex gap-3">
+      if ($basename_chemin === "index.php"): ?>
+        <video src="assets/video/video_medium.mp4" class="video rounded-top object-fit-cover border-bottom" muted autoplay loop></video>
+      <?php endif; ?>
+
+    <div class="d-flex gap-3" style="height: 150px;">
       <div>
         <span class="d-block fw-bold">Contacter nous</span>
         <span class="d-block"><i class="bi bi-geo-alt-fill me-1"></i>Lorem ipsum dolor sit, amet</span>
@@ -37,17 +40,17 @@
   crossorigin="anonymous"></script>
 
 <?php
-$uri = $_SERVER["REQUEST_URI"];
-echo "<script" . 
-$return_value = match ($uri) {
-   '/index.php' => ' src="/script.js">' ,
-   '/contact.php' => ' src="/assets/JS/validation-contact.js">' ,
-   '/categorie.php' => ' src="/assets/JS/script-categorie.js">' ,
-   '/plats.php' => ' src="/assets/JS/script-plat.js">' ,
-   '/panier.php' => ' src="/assets/JS/validation-panier.js">' ,
-   default => ' src="/script.js">',
+  $basename_chemin = basename($_SERVER['PHP_SELF']);
+  echo "<script" . 
+  $return_value = match ($basename_chemin) {
+    'index.php' => ' src="/script.js">' ,
+    'contact.php' => ' src="/assets/JS/validation-contact.js">' ,
+    'categorie.php' => ' src="/assets/JS/script-categorie.js">' ,
+    'plats.php' => ' src="/assets/JS/script-plat.js">' ,
+    'panier.php' => ' src="/assets/JS/validation-panier.js">' ,
+    default => ' src="/script.js">',
 
-} . "</script>";
+  } . "</script>";
 
 ?>
 

@@ -35,7 +35,7 @@ CREATE TABLE `plat` (
 );
 
 INSERT INTO `plat` (libelle, description, prix, image, id_categorie, active) VALUES
-('Burger charolais', 'Rustique et delicieux hamburger charolais. Viande Française', 9.90, './assets/img/food_img/burger/burger-charolais.jpg', 1, 'true'),
+('Burger charolais', 'Rustique et delicieux hamburger charolais.', 9.90, './assets/img/food_img/burger/burger-charolais.jpg', 1, 'true'),
 ('Cheesburger', 'Delicieux et fondant cheesburger.', 7.60, './assets/img/food_img/burger/cheesburger.jpg', 1, 'true'),
 ('Burger classique', 'L indémodable classique.', 6.00, './assets/img/food_img/burger/hamburger.jpg', 1, 'true'),
 
