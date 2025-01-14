@@ -17,12 +17,12 @@ if (isset($_GET['id'])) {
         die("Ce produit n' existe pas");
     }
     $panier->add($plat->id);
-    die("Le produit a bien ete ajouté au panier <a href='javascript:history.back()'>retourner sur le catalogue</a>");
+    header("Location: plats.php");
+    exit;
 
 }else {
     die("Pas d id au panier");
 }
-
 
 
 ?>

@@ -9,7 +9,6 @@ class panier{
         }
         if (isset($_POST['panier']['quantite'])) {
             $this->recalculer();
-            var_dump($_SESSION);
         }
     }
 
@@ -21,7 +20,7 @@ class panier{
             }
         }
     }
-
+        
 
     public function add($plat_id){
         if (isset($_SESSION['panier'][$plat_id])) {

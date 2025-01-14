@@ -1,0 +1,8 @@
+{
+    "name": "pc/projet-restaurant",
+    "description": "premier projet avec l afpa.",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

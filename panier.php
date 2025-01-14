@@ -1,4 +1,6 @@
 <?php 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHMailer\Exception;
 $title = "Panier";
 $baniereTitle = "Panier";
 $baniereSubtitle = "";
@@ -6,6 +8,10 @@ $baniereImage = "assets/img/bg3.jpeg";
 require 'header.php';
 require 'SQL/DAO.php';
 
+// PHPMAILER
+
+
+// CONNEXION A LA BASE DE DONNEES
 $db = connexionBase();
 
 // AFFICHER LE PANIER
@@ -21,18 +27,49 @@ if (isset($_GET['del'])) {
 // TOTAL
 $total_du_panier = 0;
 $result_total_panier = result_total_panier($db, $ids, $total_du_panier);
-// var_dump($result_total_panier);
-foreach ($result_total_panier as $plat) {
-  $total_du_panier += $plat->prix * $_SESSION['panier'][$plat->id];
+if (isset($result_total_panier)) {
+  foreach ($result_total_panier as $plat) {
+    $total_du_panier += $plat->prix * $_SESSION['panier'][$plat->id];
+  }
+}else {
+  echo "<p class='text-light m-4'>Votre panier est vide.</p>";
 }
 
+// COMMANDER
+if (isset($_POST['commander'])) {
+  
+  require 'vendor/autoload.php';
+  
+  $mail = new PHPMailer(true);
+  
+  try {
+      $mail->isSMTP();
+      $mail->Host = 'localhost';
+      $mail->Port = 1025;
+      $mail->SMTPAuth = false;
+  
+      // Expéditeur et destinataire
+      $mail->setFrom('test@example.com', 'Ton Nom');
+      $mail->addAddress('destinataire@example.com', 'Nom du destinataire');
+  
+      // Contenu du message
+      $mail->isHTML(true);
+      $mail->Subject = 'Test MailHog avec PHPMailer';
+      $mail->Body    = 'Ceci est un message de test envoyé via MailHog avec PHPMailer.';
+  
+      // Envoi du message
+      $mail->send();
+      echo '<p class="text-light">Message envoyé avec succès</p>';
+  } catch (Exception $e) {
+      echo "<p class='text-light'>L'envoi de mail a échoué. L'erreur suivante s'est produite : {$mail->ErrorInfo}</p>";
+  }}
+  ?>
 
 
 
-?>
 
 <form action="panier.php" method="post">
-  <table class="table m-5">
+  <table class="table mt-2">
     <thead>
       <tr>
         <th scope="col">Nom du produit</th>
@@ -70,13 +107,19 @@ foreach ($result_total_panier as $plat) {
     </tbody>
   </table>
 
-  <input type="submit" value="recalculer" class="btn btn-sm btn-primary m-3">
+
+  <input type="submit" value="Recalculer" class="btn btn-sm btn-primary m-3">
 
 
 </form>
 
 
+<form action="panier.php" method="post" class="mt-4 bg-light p-4">
 
+  <input type="email" value="" class="form-control" name="user_email" placeholder="Entrez votre email" required>
+
+  <input type="submit" value="Commander" class="btn btn-sm btn-primary m-3" name="commander">
+</form>
 
 
 
