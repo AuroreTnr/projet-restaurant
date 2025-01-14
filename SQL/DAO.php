@@ -121,16 +121,36 @@ function get_produit_add_session($db){
 }
 
 function display_plat_panier($db, $ids){
-    $requete = $db->query('SELECT * FROM plat WHERE id IN ('.implode(',',$ids).')');
+    if (empty($ids)) {
+        $requete = array();
+    }else {
+        $requete = $db->query('SELECT * FROM plat WHERE id IN ('.implode(',',$ids).')');
 
-    $resultat = $requete->fetchAll(PDO::FETCH_OBJ);
+        $resultat = $requete->fetchAll(PDO::FETCH_OBJ);
+    
+        $requete->closeCursor();
 
-    $requete->closeCursor();
-
-    return $resultat;
-
+        return $resultat;
+        }
+        
 }
 
+function result_total_panier($db, $ids, $total){
+    $total = 0;
+
+    if (empty($ids)) {
+        $requete = array();
+    } else {
+        $requete = $db->query('SELECT id, prix FROM plat WHERE id IN ('.implode(',',$ids).')');
+    
+        $resultat = $requete->fetchAll(PDO::FETCH_OBJ);
+        
+        $requete->closeCursor();
+    
+        return $resultat;
+    
+    }
+}
 
 
 
