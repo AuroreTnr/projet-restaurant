@@ -210,6 +210,10 @@ SET prix = (prix + (prix * 10 / 100))
 WHERE id_categorie = (SELECT id FROM categorie WHERE libelle = "Pizza"); 
 
 
+
+-- exercice pour s' entrainer -- 
+
+
 -- donner les plats les plus populaire
 
 -- donner les catégories les plus populaires

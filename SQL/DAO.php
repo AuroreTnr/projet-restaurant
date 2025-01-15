@@ -157,15 +157,10 @@ function result_total_panier($db, $ids, $total){
 
 
 // Page plats -> faire un cours sur la pagination
+// Page panier -> faire un  cours panier
+// Remettre au propre le cours PHPMailer
+// Mieux ranger mes dossiers et mettre des commentaires.
 
-
-
-// Page Panier -> à faire
-// Page panier -> cours panier a faire
-// Page accueil (après page panier) -> ajout d' un point si object dans panier
-
-
-// FONCTION COMMANDE + FONCTION MAIL
 
 
 ?>

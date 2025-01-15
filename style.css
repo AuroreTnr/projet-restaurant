@@ -51,7 +51,7 @@ main h2 {
     height: 50px;
 }
 
-.account , .recherche, .panier{
+.account , .recherche, .panier, .panier-plein{
     color: var(--accent-color);
 }
 

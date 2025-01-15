@@ -54,7 +54,7 @@ $panier = new panier();
           <i class="btn-burger bi bi-three-dots-vertical"></i>
         </button>
         <a href="/accueil.php" class="me-auto"><img src="assets/img/logo_transparent.png" class="logo" alt="logo le district"></a>
-        <a href="/panier.php" class="d-md-flex order-md-5"><i class="bi bi-cart panier"></i></a>
+        <a href="/panier.php" class="d-md-flex order-md-5"><?php echo isset($_SESSION['panier']) && count($_SESSION['panier']) > 0 ? '<i class="bi bi-cart-check panier"></i>' : '<i class="bi bi-cart panier"></i>';?></a>
         <a href="/user-account.php" class="d-md-flex order-md-5"><i class="bi bi-person-circle account"></i></a>
 
         <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar"
