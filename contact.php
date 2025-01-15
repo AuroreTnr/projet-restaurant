@@ -3,16 +3,18 @@ $title = "Contact";
 $baniereTitle = "Contact";
 $baniereSubtitle = "";
 $baniereImage = "assets/img/bg3.jpeg";
-require 'header.php';
+require 'elements/header.php';
 ?>
+
+<?php var_dump($_POST); ?>
 
 
   <div class="container my-5 formulaire">
-    <form class="row g-3 justify-content-center text-light" novalidate action="/contact.php" method="POST" id="formulaire-contact">
+    <form action="validation_contact.php" class="row g-3 justify-content-center text-light" novalidate method="POST" id="formulaire-contact">
       <div class="col-md-7">
         <label for="name" class="form-label">Entrez votre nom : * <span
             class="errorMsg errorMsg-nom text-danger"></span></label>
-        <input type="text" class="form-control" id="name" name="name" value="<?= $name = isset($name) ? htmlentities($name) : "";?>" required>
+        <input type="text" class="form-control" id="name" name="nom" value="<?= $name = isset($name) ? htmlentities($name) : "";?>" required>
       </div>
 
       <div class="col-md-7">
@@ -43,10 +45,10 @@ require 'header.php';
 
 
       <div class="col-md-7">
-        <button class="btn border-warning text-light btn-submit" name="btnContact" type="submit">Envoyer</button>
+        <button class="btn border-warning text-light btn-submit" name="ok" type="submit">Envoyer</button>
       </div>
 
     </form>
   </div>
 
-  <?php require 'footer.php'; ?>
+  <?php require 'elements/footer.php'; ?>

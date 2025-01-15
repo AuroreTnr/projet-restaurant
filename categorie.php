@@ -3,7 +3,7 @@ $title = "Catégorie";
 $baniereTitle = "Catégorie";
 $baniereSubtitle = "";
 $baniereImage = "assets/img/bg3.jpeg";
-require 'header.php';
+require 'elements/header.php';
 
 require 'SQL/DAO.php';
 
@@ -89,7 +89,7 @@ $requete_categories = get_categorie($db, $nombre_categorie_par_page, $page_coura
     </section>
 
 <?php
-require 'footer.php';
+require 'elements/footer.php';
 ?>
 
 

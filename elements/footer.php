@@ -54,11 +54,6 @@
 
 ?>
 
-
-
-<!-- Fuse.js (permet une correespondance floue des recherche utilisateur) -->
-<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
-
 </body>
 
 </html>

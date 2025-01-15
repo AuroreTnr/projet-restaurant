@@ -3,7 +3,7 @@ $title = "Plats";
 $baniereTitle = "Plats";
 $baniereSubtitle = "";
 $baniereImage = "assets/img/bg3.jpeg";
-require 'header.php';
+require 'elements/header.php';
 
 require 'SQL/DAO.php';
 
@@ -127,4 +127,4 @@ $resultat_recherche = get_recherche_bar($db, $mot_rechercher);
 
 
 
-<?php require 'footer.php'; ?>
+<?php require 'elements/footer.php'; ?>

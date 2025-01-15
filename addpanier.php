@@ -4,8 +4,7 @@ $baniereTitle = "Panier";
 $baniereSubtitle = "";
 $baniereImage = "assets/img/bg3.jpeg";
 
-
-require 'header.php';
+require 'elements/header.php';
 require 'SQL/DAO.php';
 
 $db = connexionBase();

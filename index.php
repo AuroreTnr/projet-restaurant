@@ -3,7 +3,7 @@ $title = "Restaurant the district";
 $baniereTitle = "Restaurant le district";
 $baniereSubtitle = "“Bien manger, un plaisir à partager ”";
 $baniereImage = "assets/img/banniere_1920.jpg";
-require 'header.php';
+require 'elements/header.php';
 
 require 'SQL/DAO.php';
 
@@ -95,7 +95,7 @@ $plats_populaire = get_populaire_plat($db);
 
       <!-- AFFICHAGE CAROUSEL -->
 <div class="container container-fluid my-5">
-  <div id="carouselExampleAutoplaying" class="carousel slide container-fluid" data-bs-ride="carousel" width="100%;">
+  <div id="carouselExampleAutoplaying" class="carousel slide container-fluid" data-bs-ride="carousel" style="width: 100%;">
 
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -148,4 +148,4 @@ $plats_populaire = get_populaire_plat($db);
 
 
 
-<?php require 'footer.php' ?>
+<?php require 'elements/footer.php' ?>

@@ -5,7 +5,7 @@ $title = "Panier";
 $baniereTitle = "Panier";
 $baniereSubtitle = "";
 $baniereImage = "assets/img/bg3.jpeg";
-require 'header.php';
+require 'elements/header.php';
 require 'SQL/DAO.php';
 
 
@@ -90,15 +90,15 @@ if (isset($_POST['commander']) && isset($_SESSION['panier'])) {
               setcookie(session_name(), '', time()-42000);
           }
       
-          session_destroy();      }
+          session_destroy();      
+          $error = "<div class='alert alert-success'>Message envoyé avec succès</div>";
+        }
 
 
-        $error = "<div class='alert alert-success'>Message envoyé avec succès</div>";
         
 
-        var_dump($_SESSION);
     } catch (Exception $e) {
-        echo "<p class='text-light'>L'envoi de mail a échoué. L'erreur suivante s'est produite : {$mail->ErrorInfo}</p>";
+        echo "<div class='alert alert-danger'>L'envoi de mail a échoué. L'erreur suivante s'est produite : {$mail->ErrorInfo}</div>";
     }
 
   }else {
@@ -135,17 +135,15 @@ if (isset($_POST['commander']) && isset($_SESSION['panier'])) {
   
             <td class="action"><a href="panier.php?del=<?= $plat->id ?>" class="supprimer"><i class="bi bi-trash3"></i></a></td>
           </tr>
-        <?php endforeach; ?>
-  
-        <tfoot>
-          <tr>
-            <td colspan="4" style="text-align: right;">Total : </td>
-            <td class="total"><?= number_format($total_du_panier, 2, ',', ' '); ?> €</td>
-          </tr>
-        </tfoot>
-  
+        <?php endforeach; ?>       
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" style="text-align: right;">Total : </td>
+          <td class="total"><?= number_format($total_du_panier, 2, ',', ' '); ?> €</td>
+        </tr>
+      </tfoot>
       <?php endif; ?>
-    </tbody>
   </table>
 
 
@@ -166,28 +164,5 @@ if (isset($_POST['commander']) && isset($_SESSION['panier'])) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php require 'footer.php'; ?>
+<?php require 'elements/footer.php'; ?>
 
