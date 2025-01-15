@@ -1,4 +1,0 @@
-Nom : Tournier
-Prenom : Aurore
-Adresse : 12 Rue Albert Tournier
-Code postal : 23540

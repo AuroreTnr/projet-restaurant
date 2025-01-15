@@ -1,4 +1,4 @@
-<?php 
+<?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHMailer\Exception;
 $title = "Panier";
@@ -7,6 +7,8 @@ $baniereSubtitle = "";
 $baniereImage = "assets/img/bg3.jpeg";
 require 'header.php';
 require 'SQL/DAO.php';
+
+
 
 // PHPMAILER
 
@@ -36,11 +38,13 @@ if (isset($result_total_panier)) {
 }
 
 // COMMANDER
-if (isset($_POST['commander'])) {
+if (isset($_POST['commander']) && $_SESSION['panier']) {
   
   require 'vendor/autoload.php';
   
   $mail = new PHPMailer(true);
+  $adresse_restaurant = 'http://127.0.0.1:8000/index.php';
+  $pdf_facture = 'http://127.0.0.1:8000/facture.php';
   
   try {
       $mail->isSMTP();
@@ -49,23 +53,53 @@ if (isset($_POST['commander'])) {
       $mail->SMTPAuth = false;
   
       // Expéditeur et destinataire
-      $mail->setFrom('test@example.com', 'Ton Nom');
-      $mail->addAddress('destinataire@example.com', 'Nom du destinataire');
+      $mail->setFrom('thedistrict@restaurant.com', 'The district');
+      $mail->addAddress($_POST["user_email"], 'Nom du destinataire');
   
       // Contenu du message
       $mail->isHTML(true);
-      $mail->Subject = 'Test MailHog avec PHPMailer';
-      $mail->Body    = 'Ceci est un message de test envoyé via MailHog avec PHPMailer.';
+      $mail->Subject = 'Confirmation de votre commande';
+      $mail->Body = '<h1> Merci pour votre commande</h1> <p>Notre équipe prépare votre commande. Voici un récapitulatif</p>';
+      if (isset($plats)) {
+        foreach ($plats as $plat) {
+        $mail->Body .='
+        <p>
+            <span>Plat : ' . htmlspecialchars($plat->libelle) . '</span><br>
+            <span>Quantité : ' . htmlspecialchars($_SESSION['panier'][$plat->id]) . '</span><br>
+            <span>Prix : ' . number_format($plat->prix, 2, ',', ' ') . ' €</span><br>
+            <span>Total : ' . number_format($plat->prix * htmlentities($_SESSION['panier'][$plat->id]),2,',', ' ') . ' €</span><br>
+        </p>';
+        }
+      };
+      $mail->Body .= '
+      <span>Total : ' . number_format($total_du_panier, 2, ',', ' ') . ' €</span>
+      ';
+      $mail->Body .= '<p>Votre facture est en piece jointe : <a href="' . $pdf_facture . '">ma facture</a></p>
+      ';
+      $mail->Body .= '<br><a href=' . $adresse_restaurant . '>The District</a>';
   
+
       // Envoi du message
       $mail->send();
+
+      // if ($mail) {
+      //   unset($_SESSION["panier"]);
+
+      //   if (ini_get("session.use_cookies")) 
+      //   {
+      //       setcookie(session_name(), '', time()-42000);
+      //   }
+    
+      //   session_destroy();      }
+
+
+
       echo '<p class="text-light">Message envoyé avec succès</p>';
+      var_dump($_SESSION);
   } catch (Exception $e) {
       echo "<p class='text-light'>L'envoi de mail a échoué. L'erreur suivante s'est produite : {$mail->ErrorInfo}</p>";
   }}
   ?>
-
-
 
 
 <form action="panier.php" method="post">
@@ -80,7 +114,7 @@ if (isset($_POST['commander'])) {
       </tr>
     </thead>
     <tbody>
-      <?php if (isset($plats)) :?>
+      <?php if (isset($plats) && count($plats) > 0) :?>
         <?php foreach ($plats as $plat) :?>
   
           <tr>
