@@ -155,8 +155,11 @@ function result_total_panier($db, $ids, $total){
 
 
 
-// Mieux ranger mes dossiers et mettre des commentaires.
+// Bien ranger la fonction envoie mail
+// Apprendre à ecrire des pdfs
+// Personnaliser le pdf.
 // Page panier -> faire un  cours panier apres avoir appris php poo
+// Mieux ranger mes dossiers et mettre des commentaires.
 
 
 
