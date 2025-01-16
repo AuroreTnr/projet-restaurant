@@ -7,6 +7,7 @@ $baniereSubtitle = "";
 $baniereImage = "assets/img/bg3.jpeg";
 require 'elements/header.php';
 require 'SQL/DAO.php';
+require 'script-facture.php';
 
 
 
@@ -36,7 +37,7 @@ if (isset($result_total_panier)) {
 }
 
 // COMMANDER
-if (isset($_POST['commander']) && isset($_SESSION['panier'])) {
+if (isset($_POST['commander']) && isset($_SESSION['panier']) && count($_SESSION['panier']) > 0) {
 
   if (filter_var(htmlentities($_POST['user_email']), FILTER_VALIDATE_EMAIL)) {
   
@@ -44,7 +45,6 @@ if (isset($_POST['commander']) && isset($_SESSION['panier'])) {
     
     $mail = new PHPMailer(true);
     $adresse_restaurant = 'http://127.0.0.1:8000/index.php';
-    $pdf_facture = 'http://127.0.0.1:8000/facture.php';
     
     try {
         $mail->isSMTP();
@@ -55,6 +55,7 @@ if (isset($_POST['commander']) && isset($_SESSION['panier'])) {
         // Expéditeur et destinataire
         $mail->setFrom('thedistrict@restaurant.com', 'The district');
         $mail->addAddress(htmlentities($_POST["user_email"]), 'Nom du destinataire');
+
     
         // Contenu du message
         $mail->isHTML(true);
@@ -74,10 +75,12 @@ if (isset($_POST['commander']) && isset($_SESSION['panier'])) {
         $mail->Body .= '
         <span>Total : ' . number_format($total_du_panier, 2, ',', ' ') . ' €</span>
         ';
-        $mail->Body .= '<p>Votre facture est en piece jointe : <a href="' . $pdf_facture . '">ma facture</a></p>
-        ';
+
         $mail->Body .= '<br><a href=' . $adresse_restaurant . '>The District</a>';
-    
+
+
+        // Ajouter la facture en pièce jointe
+        $mail->addAttachment($pdfOutputPath, 'facture.pdf', 'base64', 'application/pdf');
 
         // Envoi du message
         $mail->send();
@@ -98,7 +101,7 @@ if (isset($_POST['commander']) && isset($_SESSION['panier'])) {
         
 
     } catch (Exception $e) {
-        echo "<div class='alert alert-danger'>L'envoi de mail a échoué. L'erreur suivante s'est produite : {$mail->ErrorInfo}</div>";
+        echo "<div class='alert alert-danger'>L'envoi de mail a échoué. L'erreur suivante s'est produite : $e {$mail->ErrorInfo}</div>";
     }
 
   }else {
@@ -108,6 +111,7 @@ if (isset($_POST['commander']) && isset($_SESSION['panier'])) {
 
 ?>
 
+<a href="./FACTURES/"></a>
 
 <form action="panier.php" method="post">
   <table class="table mt-2">

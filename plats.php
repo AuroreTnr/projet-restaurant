@@ -12,10 +12,10 @@ $db = connexionBase();
 //--------------------------------------
 // REQUETE ET PAGINATION
 
-// nombre de categorie
+// nombre de plat
 $nombre_total_plat = (int)$db->query("SELECT COUNT(id) FROM plat")->fetch(PDO::FETCH_NUM)[0];
 
-// nombre de categorie par page
+// nombre de plat par page
 $nombre_plat_par_page = 6;
 
 // nombre de page
@@ -25,7 +25,7 @@ $nombre_page = ceil($nombre_total_plat/$nombre_plat_par_page);
 $page_courante = isset($_GET['page']) && ($_GET['page'] > 0) && ($_GET['page'] <=$nombre_page) ? (int)$_GET['page'] : (int)1;
 
 
-// requete categorie
+// requete plat
 $requete_plat = get_plat($db, $nombre_plat_par_page, $page_courante);
 
 
