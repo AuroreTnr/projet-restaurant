@@ -17,7 +17,7 @@
         <span class="d-block fw-bold">Contacter nous</span>
         <span class="d-block"><i class="bi bi-geo-alt-fill me-1"></i>Lorem ipsum dolor sit, amet</span>
         <span class="d-block"><i class="bi bi-telephone-fill me-1"></i>03 23 51 25 12</span>
-        <span class="d-block"><i class="bi bi-envelope-at me-1"></i>the-district@gmail.fr</span>
+        <span class="d-block"><i class="bi bi-envelope-at me-1"></i>thedistrict@restaurant.fr</span>
         <span class="d-block"><i class="bi bi-clock me-1"></i>Sun - Sat / 10:00 AM - 8:00 PM</span>
       </div>
 
@@ -28,10 +28,12 @@
         <a href="#"><i class="bi bi-twitter-x me-1"></i></a>
       </div>
     </div>
+    <div class ="d-flex justify-content-center gap-2">
+      <a href="politique-confidentialite.php">Politique de confidentialite</a>
+      <a href="mentions-legales.php">Mentions légales</a>
+    </div>
   </div>
 </footer>
-
-
 
 
 <!-- cdn bootstrap -->
@@ -44,7 +46,7 @@
   echo "<script" . 
   $return_value = match ($basename_chemin) {
     'index.php' => ' src="/script.js">' ,
-    'contact.php' => ' src="/assets/JS/validation-contact.js">' ,
+    // 'contact.php' => ' src="/assets/JS/validation-contact.js">' ,
     'categorie.php' => ' src="/assets/JS/script-categorie.js">' ,
     'plats.php' => ' src="/assets/JS/script-plat.js">' ,
     'panier.php' => ' src="/assets/JS/validation-panier.js">' ,
